@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenshō Wellness | Premium Massage & Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfaf7; color: #1a1a1a; }
+        .btn-gold { background-color: #b58e58; transition: all 0.3s; }
+        .btn-gold:hover { background-color: #967343; transform: translateY(-2px); }
+        .card-menu { transition: all 0.3s; border: 1px solid #e5e7eb; }
+        .card-menu:hover { border-color: #b58e58; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="text-center py-16 px-4 bg-[#1a1a1a] text-white">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-[0.2em] uppercase mb-2">Kenshō</h1>
+        <p class="text-[#b58e58] tracking-widest text-sm mb-6 uppercase">Wellness & Traditional Healing</p>
+        <div class="w-20 h-1 bg-[#b58e58] mx-auto"></div>
+        <p class="mt-6 text-gray-400 max-w-lg mx-auto italic">"Temukan ketenangan jiwa dan raga melalui sentuhan profesional bergaya Jepang modern."</p>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="max-w-5xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 uppercase tracking-tight">Daftar Layanan</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Fullbody Standard -->
+            <div class="card-menu bg-white p-6 rounded-2xl">
+                <span class="text-xs font-bold text-[#b58e58] uppercase">Basic Ritual</span>
+                <h3 class="font-bold text-lg mt-1">Fullbody Massage</h3>
+                <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm"><span>60 Menit</span> <span class="font-bold">200k</span></div>
+                    <div class="flex justify-between text-sm"><span>90 Menit</span> <span class="font-bold">250k</span></div>
+                    <div class="flex justify-between text-sm"><span>120 Menit</span> <span class="font-bold">300k</span></div>
+                </div>
+            </div>
+
+            <!-- Fullbody + Totok -->
+            <div class="card-menu bg-white p-6 rounded-2xl border-l-4 border-l-[#b58e58]">
+                <span class="text-xs font-bold text-[#b58e58] uppercase">Face & Body Zen</span>
+                <h3 class="font-bold text-lg mt-1">Massage + Totok Wajah</h3>
+                <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm"><span>90 Menit</span> <span class="font-bold">300k</span></div>
+                    <div class="flex justify-between text-sm"><span>120 Menit</span> <span class="font-bold">350k</span></div>
+                </div>
+            </div>
+
+            <!-- Fullbody + Reflexology -->
+            <div class="card-menu bg-white p-6 rounded-2xl border-l-4 border-l-[#b58e58]">
+                <span class="text-xs font-bold text-[#b58e58] uppercase">Total Recovery</span>
+                <h3 class="font-bold text-lg mt-1">Massage + Reflexology</h3>
+                <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm"><span>90 Menit</span> <span class="font-bold">300k</span></div>
+                    <div class="flex justify-between text-sm"><span>120 Menit</span> <span class="font-bold">350k</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-xl mb-20 mx-4 border border-gray-50">
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold uppercase tracking-wide">Reservasi Online</h3>
+            <p class="text-gray-500 text-sm mt-2">Lengkapi data untuk mempercepat proses booking</p>
+        </div>
+        
+        <div class="space-y-6">
+            <!-- Nama -->
+            <div>
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                <input type="text" id="name" placeholder="Contoh: Budi Santoso" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#b58e58] outline-none transition">
+            </div>
+            
+            <!-- Gender -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Gender Customer</label>
+                    <select id="gender" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none appearance-none">
+                        <option value="Pria">Pria</option>
+                        <option value="Wanita">Wanita</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Tanggal</label>
+                    <input type="date" id="date" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none">
+                </div>
+            </div>
+
+            <!-- Treatment -->
+            <div>
+                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Pilih Treatment</label>
+                <select id="treatment" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none appearance-none">
+                    <optgroup label="Fullbody Massage Standard">
+                        <option value="Fullbody Massage 60 Menit (200k)">Fullbody Massage 60 Menit - 200k</option>
+                        <option value="Fullbody Massage 90 Menit (250k)">Fullbody Massage 90 Menit - 250k</option>
+                        <option value="Fullbody Massage 120 Menit (300k)">Fullbody Massage 120 Menit - 300k</option>
+                    </optgroup>
+                    <optgroup label="Fullbody + Totok Wajah">
+                        <option value="Fullbody + Totok Wajah 90 Menit (300k)">Fullbody + Totok 90 Menit - 300k</option>
+                        <option value="Fullbody + Totok Wajah 120 Menit (350k)">Fullbody + Totok 120 Menit - 350k</option>
+                    </optgroup>
+                    <optgroup label="Fullbody + Reflexology">
+                        <option value="Fullbody + Reflexology 90 Menit (300k)">Fullbody + Reflexology 90 Menit - 300k</option>
+                        <option value="Fullbody + Reflexology 120 Menit (350k)">Fullbody + Reflexology 120 Menit - 350k</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!-- Submit -->
+            <button onclick="sendToWA()" class="w-full btn-gold text-white py-5 rounded-xl font-bold uppercase tracking-widest mt-4 shadow-lg shadow-[#b58e58]/20">
+                Konfirmasi via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Social Media & Footer -->
+    <footer class="bg-[#1a1a1a] text-white py-12 px-6 text-center">
+        <p class="uppercase tracking-widest text-sm mb-6">Connect with us</p>
+        <div class="flex justify-center space-x-8 mb-8">
+            <a href="https://instagram.com" target="_blank" class="hover:text-[#b58e58] transition"><i class="fab fa-instagram text-3xl"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="hover:text-[#b58e58] transition"><i class="fab fa-tiktok text-3xl"></i></a>
+        </div>
+        <div class="text-gray-500 text-xs border-t border-gray-800 pt-8">
+            <p>© 2026 Kenshō Wellness. Modern Healing Experience.</p>
+        </div>
+    </footer>
+
+    <script>
+        function sendToWA() {
+            const name = document.getElementById('name').value;
+            const gender = document.getElementById('gender').value;
+            const treatment = document.getElementById('treatment').value;
+            const date = document.getElementById('date').value;
+            const phone = "6285719071230";
+
+            if(name == "") { 
+                alert("Mohon masukkan nama Anda untuk kenyamanan reservasi."); 
+                return; 
+            }
+
+            const message = `Halo Kenshō Wellness,%0A%0ASaya ingin melakukan reservasi layanan pijat:%0A%0A*Detail Customer*:%0A- Nama: ${name}%0A- Gender: ${gender}%0A- Rencana Tanggal: ${date}%0A%0A*Layanan*:%0A- Treatment: ${treatment}%0A%0AMohon info ketersediaan slotnya. Terima kasih.`;
+            
+            window.open(`https://wa.me{phone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
