@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenshō Wellness | Premium Massage & Healing</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        @import url('https://fonts.googleapis.com');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfaf7; color: #1a1a1a; }
         .btn-gold { background-color: #b58e58; transition: all 0.3s; }
         .btn-gold:hover { background-color: #967343; transform: translateY(-2px); }
@@ -42,7 +49,7 @@
             </div>
 
             <!-- Fullbody + Totok -->
-            <div class="card-menu bg-white p-6 rounded-2xl border-l-4 border-l-[#b58e58]">
+            <div class="card-menu bg-white p-6 rounded-2xl border-l-4" style="border-left-color: #b58e58;">
                 <span class="text-xs font-bold text-[#b58e58] uppercase">Face & Body Zen</span>
                 <h3 class="font-bold text-lg mt-1">Massage + Totok Wajah</h3>
                 <div class="mt-4 space-y-2">
@@ -52,7 +59,7 @@
             </div>
 
             <!-- Fullbody + Reflexology -->
-            <div class="card-menu bg-white p-6 rounded-2xl border-l-4 border-l-[#b58e58]">
+            <div class="card-menu bg-white p-6 rounded-2xl border-l-4" style="border-left-color: #b58e58;">
                 <span class="text-xs font-bold text-[#b58e58] uppercase">Total Recovery</span>
                 <h3 class="font-bold text-lg mt-1">Massage + Reflexology</h3>
                 <div class="mt-4 space-y-2">
@@ -77,7 +84,7 @@
                 <input type="text" id="name" placeholder="Contoh: Budi Santoso" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#b58e58] outline-none transition">
             </div>
             
-            <!-- Gender -->
+            <!-- Gender & Date -->
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Gender Customer</label>
@@ -131,6 +138,7 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Script -->
     <script>
         function sendToWA() {
             const name = document.getElementById('name').value;
@@ -145,10 +153,9 @@
             }
 
             const message = `Halo Kenshō Wellness,%0A%0ASaya ingin melakukan reservasi layanan pijat:%0A%0A*Detail Customer*:%0A- Nama: ${name}%0A- Gender: ${gender}%0A- Rencana Tanggal: ${date}%0A%0A*Layanan*:%0A- Treatment: ${treatment}%0A%0AMohon info ketersediaan slotnya. Terima kasih.`;
-            
-            // Perbaikan ada di baris ini, menggunakan backtick (`) bukan kutip tunggal (')
-            window.open(`https://wa.me{phone}?text=${message}`, '_blank');
+
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
         }
     </script>
 </body>
-</html>
+    </html>
