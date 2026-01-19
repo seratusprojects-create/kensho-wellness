@@ -137,7 +137,7 @@
             const gender = document.getElementById('gender').value;
             const treatment = document.getElementById('treatment').value;
             const date = document.getElementById('date').value;
-            const phone = "6285719071230";
+            const phone = "6285719071230"; // Nomor HP lengkap dengan 62 di depan
 
             if(name == "") { 
                 alert("Mohon masukkan nama Anda untuk kenyamanan reservasi."); 
@@ -146,8 +146,8 @@
 
             const message = `Halo Kenshō Wellness,%0A%0ASaya ingin melakukan reservasi layanan pijat:%0A%0A*Detail Customer*:%0A- Nama: ${name}%0A- Gender: ${gender}%0A- Rencana Tanggal: ${date}%0A%0A*Layanan*:%0A- Treatment: ${treatment}%0A%0AMohon info ketersediaan slotnya. Terima kasih.`;
             
+            // Perbaikan ada di baris ini, menggunakan backtick (`) bukan kutip tunggal (')
             window.open(`https://wa.me{phone}?text=${message}`, '_blank');
-
         }
     </script>
 </body>
