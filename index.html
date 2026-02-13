@@ -5,126 +5,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenshology | Private Therapeutic Wellness</title>
     
-    <link rel="icon" type="image/png" href="GANTI_DENGAN_NAMA_FILE_KAMU.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        :root { --sage-dark: #5F6F52; --sage-mid: #A9B388; --sage-light: #FEFAE0; --text: #3A4D39; }
+        :root {
+            --sage-dark: #5F6F52;    /* Sage Tua - Untuk teks & tombol utama */
+            --sage-mid: #A9B388;     /* Sage Sedang - Untuk aksen */
+            --sage-light: #FEFAE0;   /* Cream Lembut - Untuk background */
+            --sage-soft: #F1F3E8;    /* Hijau sangat muda - Untuk card */
+            --text-main: #3A4D39;    /* Hijau gelap - Untuk teks agar nyaman dibaca */
+            --white: #FFFFFF;
+        }
+
         html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--sage-light); color: var(--text); line-height: 1.6; }
-        
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--sage-light); color: var(--text-main); line-height: 1.7; }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--text-main); }
+
         /* Navigation */
-        nav { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: white; position: fixed; width: 90%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .nav-logo img { height: 45px; width: auto; }
-        .nav-links a { text-decoration: none; color: var(--sage-dark); margin-left: 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+        nav {
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(254, 250, 224, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--sage-dark); text-decoration: none; }
+        .nav-links a { text-decoration: none; color: var(--sage-dark); margin-left: 25px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Hero Section */
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; margin-top: 60px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 7vw, 60px); margin-bottom: 10px; }
-        .hero-logo-center { width: 120px; margin-bottom: 20px; }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(254, 250, 224, 0.7), rgba(254, 250, 224, 0.7)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 { font-size: clamp(42px, 8vw, 68px); margin-bottom: 10px; }
+        .hero p { font-size: 18px; max-width: 600px; color: var(--sage-dark); font-weight: 300; }
 
-        /* Content Sections */
-        section { padding: 80px 20px; max-width: 800px; margin: auto; }
-        h2 { font-family: 'Playfair Display', serif; text-align: center; font-size: 32px; }
-        
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 20px; border: 1px solid #eee; }
-        .price-item { display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 8px 0; font-weight: 500; }
+        /* Buttons */
+        .btn-sage {
+            background: var(--sage-dark);
+            color: var(--sage-light);
+            padding: 18px 45px;
+            border-radius: 50px; /* Rounded for softer feel */
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 2px solid var(--sage-dark);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn-sage:hover { background: transparent; color: var(--sage-dark); }
+
+        /* Sections */
+        section { padding: 100px 20px; max-width: 1000px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 38px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--sage-mid); margin: 10px auto; }
+
+        /* Service Cards */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card {
+            background: var(--sage-soft);
+            padding: 35px;
+            border-radius: 25px;
+            transition: 0.4s;
+            border: 1px solid rgba(169, 179, 136, 0.2);
+        }
+        .service-card:hover { transform: translateY(-5px); background: var(--white); }
+        .price-list { list-style: none; padding: 0; margin-top: 20px; }
+        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; font-weight: 500; }
+
+        /* Flow / Accordion */
+        details { background: var(--sage-soft); margin-bottom: 15px; border-radius: 15px; }
+        summary { padding: 20px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--sage-dark); }
+        summary::after { content: '\f0d7'; font-family: 'Font Awesome 5 Free'; font-weight: 900; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        .flow-body { padding: 0 20px 20px; color: var(--text-main); font-size: 15px; opacity: 0.9; }
 
         /* Booking Form */
-        .booking-box { background: var(--sage-dark); color: white; padding: 40px 30px; border-radius: 30px; }
-        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
-        input, select, textarea { padding: 14px; border-radius: 10px; border: none; width: 100%; box-sizing: border-box; font-family: 'Inter'; }
+        .booking-box {
+            background: var(--sage-dark);
+            color: var(--sage-light);
+            padding: 50px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(95, 111, 82, 0.2);
+        }
+        .booking-box h2 { color: var(--sage-light); text-align: center; }
+        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
         .full-width { grid-column: span 2; }
-        .submit-btn { background: var(--sage-mid); color: var(--sage-dark); border: none; padding: 18px; font-weight: 700; border-radius: 50px; cursor: pointer; font-size: 16px; transition: 0.3s; }
-        .submit-btn:hover { background: white; transform: scale(1.02); }
+        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; display: block; color: var(--sage-mid); font-weight: 600; }
+        input, select, textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 14px;
+            color: var(--sage-light);
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input:focus { background: rgba(255, 255, 255, 0.15); outline: none; border-color: var(--sage-mid); }
+        option { color: #333; }
 
-        footer { text-align: center; padding: 40px; color: var(--sage-dark); font-weight: 600; }
-        @media (max-width: 600px) { .grid-form { grid-template-columns: 1fr; } .nav-links { display: none; } }
+        .submit-btn {
+            background: var(--sage-mid);
+            color: var(--sage-dark);
+            border: none;
+            padding: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .submit-btn:hover { background: var(--sage-light); transform: scale(1.02); }
+
+        /* Footer */
+        footer { text-align: center; padding: 50px 20px; color: var(--sage-dark); }
+        .social-link { color: var(--sage-dark); text-decoration: none; font-size: 22px; margin-top: 15px; display: inline-block; }
+
+        @media (max-width: 768px) {
+            .grid-form { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            nav { justify-content: center; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-logo">
-            <img src="GANTI_DENGAN_NAMA_FILE_KAMU.png" alt="Kenshology Logo">
-        </div>
+        <a href="#" class="logo">KENSHOLOGY</a>
         <div class="nav-links">
             <a href="#services">Layanan</a>
+            <a href="#flow">Alur</a>
             <a href="#booking">Booking</a>
         </div>
     </nav>
 
     <section class="hero">
-        <img src="GANTI_DENGAN_NAMA_FILE_KAMU.png" alt="Logo" class="hero-logo-center">
         <h1>Restore Your Balance</h1>
-        <p>Premium Home Service Therapeutic Wellness</p>
+        <p>Pengalaman relaksasi premium yang menenangkan, langsung di ruang pribadi Anda.</p>
+        <a href="#booking" class="btn-sage">Mulai Pemulihan</a>
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <div class="card-grid">
-            <div class="card">
+        <div class="section-title">
+            <h2>Pilihan Treatment</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
                 <h3>Fullbody Massage</h3>
-                <div class="price-item"><span>60 Menit</span> <span>250k</span></div>
-                <div class="price-item"><span>90 Menit</span> <span>300k</span></div>
-                <div class="price-item"><span>120 Menit</span> <span>350k</span></div>
+                <ul class="price-list">
+                    <li><span>60 Menit</span> <span>250k</span></li>
+                    <li><span>90 Menit</span> <span>300k</span></li>
+                    <li><span>120 Menit</span> <span>350k</span></li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>Massage + Face/Reflexy</h3>
-                <div class="price-item"><span>90 Menit</span> <span>350k</span></div>
-                <div class="price-item"><span>120 Menit</span> <span>400k</span></div>
+            <div class="service-card">
+                <h3>Massage + Totok Wajah</h3>
+                <ul class="price-list">
+                    <li><span>90 Menit</span> <span>350k</span></li>
+                    <li><span>120 Menit</span> <span>400k</span></li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Massage + Reflexology</h3>
+                <ul class="price-list">
+                    <li><span>90 Menit</span> <span>350k</span></li>
+                    <li><span>120 Menit</span> <span>400k</span></li>
+                </ul>
             </div>
         </div>
-        <p style="text-align: center; font-size: 14px; margin-top: 20px;">*Harga sudah termasuk biaya transportasi.</p>
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+            <i class="fas fa-check-circle"></i> Harga sudah termasuk biaya transport terapis.
+        </p>
+    </section>
+
+    <section id="flow">
+        <div class="section-title">
+            <h2>Experience Flow</h2>
+        </div>
+        <details>
+            <summary>01. Consultation</summary>
+            <div class="flow-body">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif dan aman.</div>
+        </details>
+        <details>
+            <summary>02. Arrival & Setup</summary>
+            <div class="flow-body">Terapis menyiapkan alat steril dan aromaterapi untuk merubah ruangan Anda menjadi spa pribadi.</div>
+        </details>
+        <details>
+            <summary>03. Personalized Recovery</summary>
+            <div class="flow-body">Proses terapi mendalam yang fokus pada titik otot yang tegang dan relaksasi saraf.</div>
+        </details>
+        <details>
+            <summary>04. Post-Session Guidance</summary>
+            <div class="flow-body">Tips peregangan dan hidrasi untuk memaksimalkan manfaat pemulihan setelah sesi.</div>
+        </details>
     </section>
 
     <section id="booking">
         <div class="booking-box">
-            <h2 style="color:white; margin-top:0">Reservasi Sesi</h2>
-            <form id="bookingForm" class="grid-form">
-                <input type="text" id="name" placeholder="Nama Lengkap" required>
-                <select id="custGender" required>
-                    <option value="">Gender Anda</option>
-                    <option>Pria</option>
-                    <option>Wanita</option>
-                </select>
-                <select id="treatment" required>
-                    <option value="">Pilih Treatment</option>
-                    <option>Fullbody Massage</option>
-                    <option>Massage + Totok Wajah</option>
-                    <option>Massage + Reflexology</option>
-                </select>
-                <select id="duration" required>
-                    <option value="">Pilih Durasi</option>
-                    <option>60 Menit</option>
-                    <option>90 Menit</option>
-                    <option>120 Menit</option>
-                </select>
-                <select id="therapist" required>
-                    <option value="">Preferensi Terapis</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
-                </select>
-                <input type="date" id="date" required>
-                <textarea id="notes" rows="3" class="full-width" placeholder="Alamat Lengkap & Keluhan Tubuh"></textarea>
+            <h2>Reservasi Sesi Anda</h2>
+            <form id="sageBookingForm" class="grid-form">
+                <div>
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Nama Anda" required>
+                </div>
+                <div>
+                    <label>Jenis Kelamin Anda</label>
+                    <select id="custGender" required>
+                        <option value="">-- Pilih --</option>
+                        <option>Pria</option>
+                        <option>Wanita</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Jenis Treatment</label>
+                    <select id="treatment" required>
+                        <option value="">-- Pilih Layanan --</option>
+                        <option>Fullbody Massage</option>
+                        <option>Massage + Totok Wajah</option>
+                        <option>Massage + Reflexology</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Durasi Pijat</label>
+                    <select id="duration" required>
+                        <option value="">-- Pilih Durasi --</option>
+                        <option>60 Menit</option>
+                        <option>90 Menit</option>
+                        <option>120 Menit</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Preferensi Terapis</label>
+                    <select id="therapist" required>
+                        <option value="">-- Pilih Terapis --</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Tanggal Rencana</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="full-width">
+                    <label>Alamat Lengkap & Keluhan</label>
+                    <textarea id="notes" rows="3" placeholder="Jl. Contoh No.123 / Keluhan punggung bawah"></textarea>
+                </div>
                 <button type="submit" class="submit-btn full-width">KONFIRMASI VIA WHATSAPP</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <a href="https://www.instagram.com/kenshology" style="text-decoration:none; color:inherit;">FOLLOW INSTAGRAM @KENSHOLOGY</a>
-        <p style="font-size:12px; margin-top:10px;">&copy; 2026 Kenshology Private Wellness</p>
+        <p>&copy; 2026 KENSHOLOGY - Private Therapeutic Wellness</p>
+        <a href="https://www.instagram.com/kenshology?igsh=eXVjeTlmZW9qNnNu" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i> @kenshology
+        </a>
     </footer>
 
     <script>
-        document.getElementById("bookingForm").addEventListener("submit", function(e){
+        document.getElementById("sageBookingForm").addEventListener("submit", function(e){
             e.preventDefault();
-            const message = `Halo Kenshology, saya ingin booking.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nCatatan: ${document.getElementById("notes").value}\n\n(Harga sudah termasuk transport)`;
+            const message = `Halo Kenshology, saya ingin reservasi session.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nLokasi/Keluhan: ${document.getElementById("notes").value}\n\n(Harga All-in Transport)`;
             window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
         });
     </script>
+
 </body>
-    </html>
-    
+</html>
