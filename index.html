@@ -12,45 +12,45 @@
 
     <style>
         :root {
-            --sage-dark: #5F6F52;    
-            --sage-mid: #A9B388;     
-            --sage-light: #FEFAE0;   
-            --sage-soft: #F1F3E8;    
-            --text-main: #3A4D39;    
+            --stone-light: #C9D3CA;   
+            --slate-grey: #929C92;    
+            --sand-warm: #A39384;     
+            --deep-black: #161313;    
+            --bg-offwhite: #F9F8F5;   
             --white: #FFFFFF;
         }
 
         html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--sage-light); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg-offwhite); color: var(--deep-black); line-height: 1.7; overflow-x: hidden; }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--text-main); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--deep-black); }
 
-        /* Navigation Professional & Simetris */
+        /* Navigation Simetris */
         nav {
             padding: 15px 0;
             display: flex;
-            justify-content: center; /* Logo navigasi di tengah untuk mobile */
+            justify-content: center;
             align-items: center;
-            background: rgba(254, 250, 224, 0.98);
+            background: rgba(249, 248, 245, 0.98);
             backdrop-filter: blur(15px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(95, 111, 82, 0.05);
+            border-bottom: 1px solid rgba(22, 19, 19, 0.05);
         }
-        .nav-logo-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
+        .nav-logo-container { display: flex; justify-content: center; width: 100%; }
+        
+        /* Filter Logo Navigasi (Pilihan No 2: Deep Slate) */
         .nav-logo img {
-            height: 45px; 
+            height: 48px; 
             width: auto;
             display: block;
-            mix-blend-mode: multiply; /* Menghilangkan kotak putih navigasi */
+            mix-blend-mode: multiply;
+            filter: grayscale(1) brightness(0.4) sepia(0.2) hue-rotate(80deg); /* Mengubah hijau ke deep slate */
         }
-        .nav-links { display: none; } /* Mobile hidden untuk simetrisitas */
+
+        .nav-links { display: none; }
 
         /* Hero Section */
         .hero {
@@ -61,109 +61,102 @@
             align-items: center;
             text-align: center;
             padding: 0 25px;
-            background: linear-gradient(rgba(254, 250, 224, 0.8), rgba(254, 250, 224, 0.8)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(201, 211, 202, 0.75), rgba(163, 147, 132, 0.75)), url('https://images.unsplash.com/photo-1544161515-436cefb657f8?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
         }
         
-        /* Logo Hero Utama - Simetris Sempurna */
+        /* Filter Logo Hero (Pilihan No 2: Deep Slate) */
         .hero-logo-large {
             width: 800px; 
-            max-width: 80%; /* Sedikit lebih kecil agar elegan */
+            max-width: 75%; 
             height: auto;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             display: block;
-            mix-blend-mode: multiply; /* Menghilangkan kotak putih logo tengah */
+            mix-blend-mode: multiply;
+            filter: grayscale(1) brightness(0.3) opacity(0.8); /* Memberi kesan elegan dan menyatu */
             animation: fadeIn 2s ease;
         }
 
-        .hero h1 { font-size: clamp(40px, 9vw, 68px); margin: 0 0 15px 0; line-height: 1.1; }
-        .hero p { font-size: 18px; max-width: 550px; color: var(--sage-dark); font-weight: 300; margin-bottom: 35px; }
+        .hero h1 { font-size: clamp(38px, 9vw, 65px); margin: 0 0 10px 0; font-weight: 500; }
+        .hero p { font-size: 18px; max-width: 550px; color: var(--deep-black); font-weight: 300; margin-bottom: 35px; opacity: 0.8; }
 
-        /* Buttons Premium */
-        .btn-sage {
-            background: var(--sage-dark);
-            color: var(--sage-light);
-            padding: 20px 50px;
-            border-radius: 50px;
+        .btn-luxury {
+            background: var(--deep-black);
+            color: var(--white);
+            padding: 20px 55px;
+            border-radius: 2px;
             text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 2px solid var(--sage-dark);
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(95, 111, 82, 0.15);
-        }
-        .btn-sage:hover { background: transparent; color: var(--sage-dark); transform: translateY(-2px); }
-
-        /* Content Sections */
-        section { padding: 120px 25px; max-width: 1000px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 42px; position: relative; }
-        .section-title h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--sage-mid); margin: 15px auto; }
-
-        /* Service Grid Professional */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card {
-            background: var(--sage-soft);
-            padding: 45px;
-            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
             transition: 0.4s;
-            border: 1px solid rgba(169, 179, 136, 0.15);
+            border: 1px solid var(--deep-black);
         }
-        .service-card:hover { transform: translateY(-10px); background: var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
-        .price-list { list-style: none; padding: 0; margin-top: 25px; }
-        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.03); padding: 12px 0; font-weight: 500; }
+        .btn-luxury:hover { background: transparent; color: var(--deep-black); }
 
-        /* Flow & Booking */
-        details { background: var(--sage-soft); margin-bottom: 15px; border-radius: 20px; border: 1px solid transparent; }
-        summary { padding: 25px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 20px; list-style: none; color: var(--sage-dark); }
+        section { padding: 120px 25px; max-width: 1100px; margin: auto; }
+        .section-title h2 { font-size: 40px; color: var(--sand-warm); text-align: center; }
+        .section-title h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--sand-warm); margin: 20px auto; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card {
+            background: var(--white);
+            padding: 50px;
+            border: 1px solid rgba(163, 147, 132, 0.2);
+            transition: 0.4s;
+        }
+        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(163, 147, 132, 0.1); padding: 15px 0; }
+        .price-list li span:last-child { font-weight: 700; color: var(--sand-warm); }
+
+        details { background: var(--white); margin-bottom: 10px; border: 1px solid rgba(163, 147, 132, 0.15); }
+        summary { padding: 25px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; color: var(--deep-black); }
         
         .booking-box {
-            background: var(--sage-dark);
-            color: var(--sage-light);
-            padding: 60px 40px;
-            border-radius: 40px;
-            box-shadow: 0 30px 60px rgba(95, 111, 82, 0.25);
+            background: var(--slate-grey);
+            color: var(--white);
+            padding: 70px 50px;
+            border-radius: 0;
         }
         .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
         .full-width { grid-column: span 2; }
+        label { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
         input, select, textarea {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 16px;
-            color: var(--sage-light);
-            border-radius: 12px;
+            color: var(--white);
+            border-radius: 0;
             width: 100%;
             box-sizing: border-box;
-            font-size: 15px;
         }
         .submit-btn {
-            background: var(--sage-mid);
-            color: var(--sage-dark);
+            background: var(--deep-black);
+            color: var(--white);
             border: none;
-            padding: 20px;
-            font-weight: 700;
-            border-radius: 50px;
+            padding: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 17px;
+            font-size: 14px;
         }
 
-        footer { text-align: center; padding: 60px 25px; color: var(--sage-dark); border-top: 1px solid rgba(95, 111, 82, 0.05); }
+        footer { text-align: center; padding: 80px 25px; color: var(--sand-warm); font-size: 13px; letter-spacing: 1px; }
 
-        /* Desktop Layout */
         @media (min-width: 769px) {
             nav { justify-content: space-between; padding: 15px 5%; width: 90%; }
             .nav-logo-container { justify-content: flex-start; width: auto; }
             .nav-links { display: flex; }
-            .nav-links a { text-decoration: none; color: var(--sage-dark); margin-left: 35px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+            .nav-links a { text-decoration: none; color: var(--deep-black); margin-left: 40px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
         }
-
         @media (max-width: 768px) {
             .grid-form { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
         }
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(15px);} to {opacity: 1; transform: translateY(0);} }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
     </style>
 </head>
 <body>
@@ -185,7 +178,7 @@
         <img src="logo-kenshology.png" alt="Kenshology" class="hero-logo-large">
         <h1>Restore Your Balance</h1>
         <p>Pengalaman relaksasi premium yang menenangkan, langsung di ruang pribadi Anda.</p>
-        <a href="#booking" class="btn-sage">Mulai Pemulihan</a>
+        <a href="#booking" class="btn-luxury">Mulai Pemulihan</a>
     </section>
 
     <section id="services">
@@ -218,15 +211,15 @@
 
     <section id="flow">
         <div class="section-title"><h2>Experience Flow</h2></div>
-        <details><summary>01. Consultation</summary><div class="flow-body">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif.</div></details>
-        <details><summary>02. Arrival & Setup</summary><div class="flow-body">Terapis menyiapkan alat steril dan aromaterapi di ruangan Anda.</div></details>
-        <details><summary>03. Personalized Recovery</summary><div class="flow-body">Proses terapi mendalam fokus pada titik otot yang tegang.</div></details>
-        <details><summary>04. Post-Session Guidance</summary><div class="flow-body">Tips peregangan dan hidrasi pasca sesi.</div></details>
+        <details><summary>01. Consultation</summary><div style="padding: 20px;">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif.</div></details>
+        <details><summary>02. Arrival & Setup</summary><div style="padding: 20px;">Terapis menyiapkan alat steril dan aromaterapi di ruangan Anda.</div></details>
+        <details><summary>03. Personalized Recovery</summary><div style="padding: 20px;">Proses terapi mendalam fokus pada titik otot yang tegang.</div></details>
+        <details><summary>04. Post-Session Guidance</summary><div style="padding: 20px;">Tips peregangan dan hidrasi pasca sesi.</div></details>
     </section>
 
     <section id="booking">
         <div class="booking-box">
-            <h2 style="text-align: center; color: var(--sage-light);">Reservasi Sesi Anda</h2>
+            <h2 style="text-align: center; color: var(--white);">Reservasi Sesi Anda</h2>
             <form id="sageBookingForm" class="grid-form">
                 <div><label>Nama Lengkap</label><input type="text" id="name" placeholder="Nama Anda" required></div>
                 <div><label>Jenis Kelamin</label><select id="custGender" required><option value="">-- Pilih --</option><option>Pria</option><option>Wanita</option></select></div>
@@ -242,7 +235,9 @@
 
     <footer>
         <p>&copy; 2026 KENSHOLOGY - Private Therapeutic Wellness</p>
-        <a href="https://www.instagram.com/kenshology" target="_blank" style="color:var(--sage-dark); text-decoration:none; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+        <div style="margin-top: 20px;">
+            <a href="https://www.instagram.com/kenshology" target="_blank" style="color:var(--sand-warm); text-decoration:none; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <script>
@@ -252,6 +247,5 @@
             window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
         });
     </script>
-
 </body>
 </html>
