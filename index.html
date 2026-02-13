@@ -25,7 +25,7 @@
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--deep-black); }
 
-        /* Navigation Simetris */
+        /* Navigation Simetris - Logo Center Mobile */
         nav {
             padding: 15px 0;
             display: flex;
@@ -40,16 +40,13 @@
             border-bottom: 1px solid rgba(22, 19, 19, 0.05);
         }
         .nav-logo-container { display: flex; justify-content: center; width: 100%; }
-        
-        /* Filter Logo Navigasi (Pilihan No 2: Deep Slate) */
         .nav-logo img {
             height: 48px; 
             width: auto;
             display: block;
             mix-blend-mode: multiply;
-            filter: grayscale(1) brightness(0.4) sepia(0.2) hue-rotate(80deg); /* Mengubah hijau ke deep slate */
+            filter: grayscale(1) brightness(0.4); /* Mengubah logo ke Deep Slate */
         }
-
         .nav-links { display: none; }
 
         /* Hero Section */
@@ -61,73 +58,101 @@
             align-items: center;
             text-align: center;
             padding: 0 25px;
-            background: linear-gradient(rgba(201, 211, 202, 0.75), rgba(163, 147, 132, 0.75)), url('https://images.unsplash.com/photo-1544161515-436cefb657f8?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(249, 248, 245, 0.75), rgba(249, 248, 245, 0.75)), url('https://images.unsplash.com/photo-1544161515-436cefb657f8?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
         }
         
-        /* Filter Logo Hero (Pilihan No 2: Deep Slate) */
         .hero-logo-large {
             width: 800px; 
-            max-width: 75%; 
-            height: auto;
-            margin-bottom: 45px;
-            display: block;
+            max-width: 70%; 
+            margin-bottom: 40px;
             mix-blend-mode: multiply;
-            filter: grayscale(1) brightness(0.3) opacity(0.8); /* Memberi kesan elegan dan menyatu */
+            filter: grayscale(1) brightness(0.3);
             animation: fadeIn 2s ease;
         }
 
         .hero h1 { font-size: clamp(38px, 9vw, 65px); margin: 0 0 10px 0; font-weight: 500; }
-        .hero p { font-size: 18px; max-width: 550px; color: var(--deep-black); font-weight: 300; margin-bottom: 35px; opacity: 0.8; }
+        .hero p { font-size: 18px; max-width: 550px; opacity: 0.8; margin-bottom: 35px; font-weight: 300; }
 
         .btn-luxury {
             background: var(--deep-black);
             color: var(--white);
             padding: 20px 55px;
-            border-radius: 2px;
             text-decoration: none;
-            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 13px;
             transition: 0.4s;
             border: 1px solid var(--deep-black);
+            display: inline-block;
         }
         .btn-luxury:hover { background: transparent; color: var(--deep-black); }
 
-        section { padding: 120px 25px; max-width: 1100px; margin: auto; }
-        .section-title h2 { font-size: 40px; color: var(--sand-warm); text-align: center; }
+        /* Layout Layanan dengan Visual Pijat Wajah */
+        section { padding: 100px 25px; max-width: 1200px; margin: auto; }
+        .section-title h2 { font-size: 40px; color: var(--sand-warm); text-align: center; margin-bottom: 50px; }
         .section-title h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--sand-warm); margin: 20px auto; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        .service-image {
+            flex: 1;
+            min-width: 320px;
+            height: 550px;
+            background: url('foto-pijat-wajah.jpeg') center/cover;
+            border: 1px solid rgba(163, 147, 132, 0.2);
+        }
+        .service-content { flex: 1.2; min-width: 320px; }
+
         .service-card {
             background: var(--white);
-            padding: 50px;
-            border: 1px solid rgba(163, 147, 132, 0.2);
-            transition: 0.4s;
+            padding: 40px;
+            border: 1px solid rgba(163, 147, 132, 0.15);
+            margin-bottom: 25px;
         }
-        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(163, 147, 132, 0.1); padding: 15px 0; }
+        .price-list { list-style: none; padding: 0; margin: 0; }
+        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(163, 147, 132, 0.1); padding: 15px 0; font-size: 15px; }
         .price-list li span:last-child { font-weight: 700; color: var(--sand-warm); }
 
-        details { background: var(--white); margin-bottom: 10px; border: 1px solid rgba(163, 147, 132, 0.15); }
-        summary { padding: 25px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; color: var(--deep-black); }
+        /* Experience Flow dengan Background Botol Amber */
+        .flow-section-wrapper {
+            background: linear-gradient(rgba(249, 248, 245, 0.92), rgba(249, 248, 245, 0.92)), url('foto-botol-amber.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        .flow-inner { max-width: 900px; margin: auto; padding: 0 25px; }
+
+        details { background: var(--white); margin-bottom: 12px; border: 1px solid rgba(163, 147, 132, 0.15); }
+        summary { padding: 25px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--deep-black); }
         
+        /* Booking Box */
         .booking-box {
             background: var(--slate-grey);
             color: var(--white);
-            padding: 70px 50px;
-            border-radius: 0;
+            padding: 80px 50px;
+            margin-top: 50px;
         }
         .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
         .full-width { grid-column: span 2; }
-        label { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+        label { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; opacity: 0.9; }
         input, select, textarea {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 16px;
             color: var(--white);
-            border-radius: 0;
             width: 100%;
             box-sizing: border-box;
         }
@@ -136,25 +161,28 @@
             color: var(--white);
             border: none;
             padding: 22px;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
+            width: 100%;
+            font-weight: 600;
             transition: 0.3s;
-            font-size: 14px;
         }
+        .submit-btn:hover { background: var(--white); color: var(--deep-black); }
 
-        footer { text-align: center; padding: 80px 25px; color: var(--sand-warm); font-size: 13px; letter-spacing: 1px; }
+        footer { text-align: center; padding: 100px 25px; color: var(--sand-warm); font-size: 12px; letter-spacing: 1px; }
 
         @media (min-width: 769px) {
             nav { justify-content: space-between; padding: 15px 5%; width: 90%; }
             .nav-logo-container { justify-content: flex-start; width: auto; }
             .nav-links { display: flex; }
-            .nav-links a { text-decoration: none; color: var(--deep-black); margin-left: 40px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+            .nav-links a { text-decoration: none; color: var(--deep-black); margin-left: 40px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
         }
         @media (max-width: 768px) {
             .grid-form { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
+            .service-image { height: 350px; }
+            section { padding: 70px 20px; }
         }
         @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
     </style>
@@ -183,43 +211,47 @@
 
     <section id="services">
         <div class="section-title"><h2>Pilihan Treatment</h2></div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Fullbody Massage</h3>
-                <ul class="price-list">
-                    <li><span>60 Menit</span> <span>250k</span></li>
-                    <li><span>90 Menit</span> <span>300k</span></li>
-                    <li><span>120 Menit</span> <span>350k</span></li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Massage + Totok Wajah</h3>
-                <ul class="price-list">
-                    <li><span>90 Menit</span> <span>350k</span></li>
-                    <li><span>120 Menit</span> <span>400k</span></li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Massage + Reflexology</h3>
-                <ul class="price-list">
-                    <li><span>90 Menit</span> <span>350k</span></li>
-                    <li><span>120 Menit</span> <span>400k</span></li>
-                </ul>
+        <div class="service-layout">
+            <div class="service-image"></div> <div class="service-content">
+                <div class="service-card">
+                    <h3>Fullbody Massage</h3>
+                    <ul class="price-list">
+                        <li><span>60 Menit</span> <span>250k</span></li>
+                        <li><span>90 Menit</span> <span>300k</span></li>
+                        <li><span>120 Menit</span> <span>350k</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Massage + Totok Wajah</h3>
+                    <ul class="price-list">
+                        <li><span>90 Menit</span> <span>350k</span></li>
+                        <li><span>120 Menit</span> <span>400k</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Massage + Reflexology</h3>
+                    <ul class="price-list">
+                        <li><span>90 Menit</span> <span>350k</span></li>
+                        <li><span>120 Menit</span> <span>400k</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="flow">
-        <div class="section-title"><h2>Experience Flow</h2></div>
-        <details><summary>01. Consultation</summary><div style="padding: 20px;">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif.</div></details>
-        <details><summary>02. Arrival & Setup</summary><div style="padding: 20px;">Terapis menyiapkan alat steril dan aromaterapi di ruangan Anda.</div></details>
-        <details><summary>03. Personalized Recovery</summary><div style="padding: 20px;">Proses terapi mendalam fokus pada titik otot yang tegang.</div></details>
-        <details><summary>04. Post-Session Guidance</summary><div style="padding: 20px;">Tips peregangan dan hidrasi pasca sesi.</div></details>
-    </section>
+    <div class="flow-section-wrapper" id="flow">
+        <div class="flow-inner">
+            <div class="section-title"><h2>Experience Flow</h2></div>
+            <details><summary>01. Consultation</summary><div style="padding: 20px;">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif.</div></details>
+            <details><summary>02. Arrival & Setup</summary><div style="padding: 20px;">Terapis menyiapkan alat steril dan aromaterapi di ruangan Anda.</div></details>
+            <details><summary>03. Personalized Recovery</summary><div style="padding: 20px;">Proses terapi mendalam fokus pada titik otot yang tegang.</div></details>
+            <details><summary>04. Post-Session Guidance</summary><div style="padding: 20px;">Tips peregangan dan hidrasi pasca sesi.</div></details>
+        </div>
+    </div>
 
     <section id="booking">
         <div class="booking-box">
-            <h2 style="text-align: center; color: var(--white);">Reservasi Sesi Anda</h2>
+            <h2 style="text-align: center; color: var(--white); font-family: 'Playfair Display', serif;">Reservasi Sesi Anda</h2>
             <form id="sageBookingForm" class="grid-form">
                 <div><label>Nama Lengkap</label><input type="text" id="name" placeholder="Nama Anda" required></div>
                 <div><label>Jenis Kelamin</label><select id="custGender" required><option value="">-- Pilih --</option><option>Pria</option><option>Wanita</option></select></div>
