@@ -3,146 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenshology | Private Therapeutic Wellness</title>
+
+<title>Kenshology | Private Therapeutic Wellness Home Service</title>
+
+<meta name="description" content="Kenshology offers private therapeutic wellness and mindful muscle recovery. Premium home service massage by appointment only.">
+<meta name="keywords" content="massage home service, private massage, wellness therapy, muscle recovery, pijat premium">
+<meta name="author" content="Kenshology">
+
+<meta property="og:title" content="Kenshology | Private Therapeutic Wellness">
+<meta property="og:description" content="Private Therapeutic Wellness, Delivered to Your Space.">
+<meta property="og:image" content="logo-kenshology.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --beige: #F4EFEA;
-    --brown: #B8A89A;
-    --charcoal: #2C2C2C;
-    --olive: #8C9A8A;
+:root{
+--beige:#F4EFEA;
+--brown:#B8A89A;
+--charcoal:#2C2C2C;
+--olive:#8C9A8A;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--beige);
-    color: var(--charcoal);
-    line-height: 1.6;
+html{
+scroll-behavior:smooth;
 }
 
-h1,h2,h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight:600;
+body{
+font-family:'Inter',sans-serif;
+background:var(--beige);
+color:var(--charcoal);
+line-height:1.7;
+overflow-x:hidden;
 }
 
-section { padding:80px 10%; }
-
-.hero {
-    text-align:center;
-    padding:120px 10%;
-    background: linear-gradient(rgba(244,239,234,0.95), rgba(244,239,234,0.95)),
-    url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80');
-    background-size:cover;
-    background-position:center;
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+font-weight:600;
 }
 
-.hero h1 { font-size:3rem; margin-bottom:20px; }
-.hero p { margin-bottom:20px; }
-
-.buttons a {
-    text-decoration:none;
-    padding:14px 30px;
-    margin:10px;
-    border-radius:30px;
-    font-weight:500;
-    transition:.3s ease;
+section{
+padding:100px 8%;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
 }
 
-.btn-primary {
-    background:var(--charcoal);
-    color:white;
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
-.btn-secondary {
-    border:1px solid var(--charcoal);
-    color:var(--charcoal);
+.hero{
+text-align:center;
+padding:120px 8%;
+background:linear-gradient(rgba(244,239,234,0.92),rgba(244,239,234,0.92)),
+url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+opacity:1;
+transform:none;
 }
 
-.btn-secondary:hover {
-    background:var(--brown);
-    color:white;
-    border:none;
+.logo{
+width:120px;
+margin-bottom:25px;
 }
 
-.about, .experience { text-align:center; }
-
-.services { background:white; }
-
-.service-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
-    margin-top:40px;
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
 }
 
-.card {
-    background:var(--beige);
-    padding:30px;
-    border-radius:20px;
+.hero .sub{
+max-width:600px;
+margin:0 auto 30px;
+color:#555;
 }
 
-.experience-steps {
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:30px;
+.buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
 }
 
-.step {
-    background:white;
-    padding:25px;
-    border-radius:20px;
+.buttons a{
+text-decoration:none;
+padding:14px 32px;
+border-radius:40px;
+font-weight:500;
+transition:0.3s ease;
 }
 
-.booking {
-    text-align:center;
-    background:var(--olive);
-    color:white;
+.btn-primary{
+background:var(--charcoal);
+color:white;
 }
 
-.booking-form {
-    max-width:500px;
-    margin:40px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.btn-primary:hover{
+background:black;
+}
+
+.btn-secondary{
+border:1px solid var(--charcoal);
+color:var(--charcoal);
+}
+
+.btn-secondary:hover{
+background:var(--brown);
+color:white;
+border:none;
+}
+
+.about,.experience{
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.services{
+background:white;
+}
+
+.service-grid{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:var(--beige);
+padding:35px;
+border-radius:20px;
+transition:0.4s ease;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.experience-steps{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.step{
+background:white;
+padding:30px;
+border-radius:20px;
+}
+
+.booking{
+text-align:center;
+background:var(--olive);
+color:white;
+}
+
+.booking-form{
+max-width:500px;
+margin:40px auto 0;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 .booking-form input,
 .booking-form select,
-.booking-form textarea {
-    padding:14px;
-    border-radius:12px;
-    border:none;
-    font-family:'Inter', sans-serif;
+.booking-form textarea{
+padding:14px;
+border-radius:12px;
+border:none;
+font-family:'Inter',sans-serif;
 }
 
-.booking-form textarea {
-    resize:none;
-    height:100px;
+.booking-form textarea{
+height:100px;
+resize:none;
 }
 
-.booking-form button {
-    padding:16px;
-    border-radius:30px;
-    border:none;
-    background:var(--charcoal);
-    color:white;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s ease;
+.booking-form button{
+padding:16px;
+border-radius:40px;
+border:none;
+background:var(--charcoal);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
 }
 
-.booking-form button:hover { background:black; }
+.booking-form button:hover{
+background:black;
+}
 
-footer {
-    text-align:center;
-    padding:30px;
-    background:var(--beige);
+footer{
+text-align:center;
+padding:40px;
+font-size:0.9rem;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:2.2rem;}
+section{padding:80px 6%;}
 }
 </style>
 </head>
@@ -150,9 +221,10 @@ footer {
 <body>
 
 <section class="hero">
+<img src="logo-kenshology.png" alt="Kenshology Logo" class="logo">
 <h1>Kenshology</h1>
 <p><strong>The Art & Science of Conscious Recovery</strong></p>
-<p>Private Therapeutic Wellness, Delivered to Your Space.</p>
+<p class="sub">Private Therapeutic Wellness, Delivered to Your Space.</p>
 <div class="buttons">
 <a href="#booking" class="btn-primary">Book Session</a>
 <a href="https://wa.me/6285893122538" target="_blank" class="btn-secondary">WhatsApp Booking</a>
@@ -161,35 +233,32 @@ footer {
 
 <section class="about">
 <h2>A Different Kind of Recovery</h2>
-<p style="margin-top:20px; max-width:700px; margin-inline:auto;">
-Kenshology is designed for those who seek mindful bodywork beyond ordinary massage.
-Each session is personalized, private, and focused on conscious muscle recovery.
+<p style="margin-top:25px;">
+Kenshology offers mindful bodywork designed for personalized, private,
+and conscious muscle recovery. Each session restores balance,
+calms the nervous system, and elevates refined well-being.
 </p>
 </section>
 
 <section class="services">
 <h2 style="text-align:center;">Services</h2>
 <div class="service-grid">
-
 <div class="card">
 <h3>Fullbody Massage</h3>
 <p>60 menit — Rp250.000</p>
 <p>90 menit — Rp300.000</p>
 <p>120 menit — Rp350.000</p>
 </div>
-
 <div class="card">
 <h3>Massage + Totok Wajah</h3>
 <p>90 menit — Rp350.000</p>
 <p>120 menit — Rp400.000</p>
 </div>
-
 <div class="card">
 <h3>Massage + Reflexology</h3>
 <p>90 menit — Rp350.000</p>
 <p>120 menit — Rp400.000</p>
 </div>
-
 </div>
 </section>
 
@@ -208,18 +277,14 @@ Each session is personalized, private, and focused on conscious muscle recovery.
 <p>Private • Exclusive • Limited Slots</p>
 
 <form id="bookingForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="booking-form">
-
-<input type="text" name="name" id="name" placeholder="Full Name" required>
-
-<select name="gender" id="gender" required>
+<input type="text" id="name" name="name" placeholder="Full Name" required>
+<select id="gender" name="gender" required>
 <option value="">Gender</option>
-<option value="Male">Male</option>
-<option value="Female">Female</option>
+<option>Male</option>
+<option>Female</option>
 </select>
-
-<input type="tel" name="phone" id="phone" placeholder="WhatsApp Number" required>
-
-<select name="service" id="service" required>
+<input type="tel" id="phone" name="phone" placeholder="WhatsApp Number" required>
+<select id="service" name="service" required>
 <option value="">Select Service</option>
 <option>Fullbody Massage - 60 menit</option>
 <option>Fullbody Massage - 90 menit</option>
@@ -229,13 +294,9 @@ Each session is personalized, private, and focused on conscious muscle recovery.
 <option>Massage + Reflexology - 90 menit</option>
 <option>Massage + Reflexology - 120 menit</option>
 </select>
-
-<input type="date" name="date" id="date" required>
-
-<textarea name="notes" id="notes" placeholder="Additional Notes (Optional)"></textarea>
-
+<input type="date" id="date" name="date" required>
+<textarea id="notes" name="notes" placeholder="Additional Notes (Optional)"></textarea>
 <button type="submit">Confirm Booking</button>
-
 </form>
 </section>
 
@@ -244,33 +305,19 @@ Each session is personalized, private, and focused on conscious muscle recovery.
 </footer>
 
 <script>
-document.getElementById("bookingForm").addEventListener("submit", function(e){
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const rect=sec.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
 
+document.getElementById("bookingForm").addEventListener("submit",function(e){
 e.preventDefault();
-
-const name = document.getElementById("name").value;
-const gender = document.getElementById("gender").value;
-const phone = document.getElementById("phone").value;
-const service = document.getElementById("service").value;
-const date = document.getElementById("date").value;
-const notes = document.getElementById("notes").value;
-
-const message = `Hello Kenshology,
-Booking Request:
-
-Name: ${name}
-Gender: ${gender}
-Phone: ${phone}
-Service: ${service}
-Date: ${date}
-Notes: ${notes}`;
-
-const encodedMessage = encodeURIComponent(message);
-
-window.open(`https://wa.me/6285893122538?text=${encodedMessage}`, '_blank');
-
-this.submit();
-
+const name=name.value;
 });
 </script>
 
