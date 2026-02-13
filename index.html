@@ -10,283 +10,69 @@
 
     <style>
         :root {
-            --sage-dark: #5F6F52;    /* Sage Tua - Untuk teks & tombol utama */
-            --sage-mid: #A9B388;     /* Sage Sedang - Untuk aksen */
-            --sage-light: #FEFAE0;   /* Cream Lembut - Untuk background */
-            --sage-soft: #F1F3E8;    /* Hijau sangat muda - Untuk card */
-            --text-main: #3A4D39;    /* Hijau gelap - Untuk teks agar nyaman dibaca */
-            --white: #FFFFFF;
+            --sage-dark: #5F6F52; --sage-mid: #A9B388; --sage-light: #FEFAE0;   
+            --sage-soft: #F1F3E8; --text-main: #3A4D39; --white: #FFFFFF;
         }
 
         html { scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--sage-light); color: var(--text-main); line-height: 1.7; }
-
         h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--text-main); }
 
         /* Navigation */
         nav {
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(254, 250, 224, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 90%;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 5%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(254, 250, 224, 0.95); backdrop-filter: blur(10px);
+            position: fixed; width: 90%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(95, 111, 82, 0.1);
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--sage-dark); text-decoration: none; }
-        .nav-links a { text-decoration: none; color: var(--sage-dark); margin-left: 25px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-logo img { height: 45px; width: auto; }
+        .nav-links a { text-decoration: none; color: var(--sage-dark); margin-left: 25px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(254, 250, 224, 0.7), rgba(254, 250, 224, 0.7)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+            background: linear-gradient(rgba(254, 250, 224, 0.8), rgba(254, 250, 224, 0.8)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: clamp(42px, 8vw, 68px); margin-bottom: 10px; }
-        .hero p { font-size: 18px; max-width: 600px; color: var(--sage-dark); font-weight: 300; }
+        .hero-logo { width: 150px; margin-bottom: 20px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05)); }
+        .hero h1 { font-size: clamp(38px, 7vw, 60px); margin: 0; }
+        .hero p { font-size: 18px; max-width: 600px; color: var(--sage-dark); font-weight: 300; margin: 15px 0 30px; }
 
-        /* Buttons */
         .btn-sage {
-            background: var(--sage-dark);
-            color: var(--sage-light);
-            padding: 18px 45px;
-            border-radius: 50px; /* Rounded for softer feel */
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            border: 2px solid var(--sage-dark);
-            display: inline-block;
-            margin-top: 20px;
+            background: var(--sage-dark); color: var(--sage-light); padding: 18px 45px; border-radius: 50px;
+            text-decoration: none; font-weight: 600; transition: 0.3s; border: 2px solid var(--sage-dark);
         }
         .btn-sage:hover { background: transparent; color: var(--sage-dark); }
 
-        /* Sections */
+        /* Services & Cards */
         section { padding: 100px 20px; max-width: 1000px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 38px; position: relative; display: inline-block; }
-        .section-title h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--sage-mid); margin: 10px auto; }
-
-        /* Service Cards */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .service-card {
-            background: var(--sage-soft);
-            padding: 35px;
-            border-radius: 25px;
-            transition: 0.4s;
-            border: 1px solid rgba(169, 179, 136, 0.2);
-        }
-        .service-card:hover { transform: translateY(-5px); background: var(--white); }
+        .service-card { background: var(--sage-soft); padding: 35px; border-radius: 25px; border: 1px solid rgba(169, 179, 136, 0.2); }
         .price-list { list-style: none; padding: 0; margin-top: 20px; }
-        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; font-weight: 500; }
+        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; }
 
-        /* Flow / Accordion */
-        details { background: var(--sage-soft); margin-bottom: 15px; border-radius: 15px; }
-        summary { padding: 20px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--sage-dark); }
-        summary::after { content: '\f0d7'; font-family: 'Font Awesome 5 Free'; font-weight: 900; transition: 0.3s; }
-        details[open] summary::after { transform: rotate(180deg); }
-        .flow-body { padding: 0 20px 20px; color: var(--text-main); font-size: 15px; opacity: 0.9; }
+        /* Flow */
+        details { background: var(--sage-soft); margin-bottom: 12px; border-radius: 15px; }
+        summary { padding: 20px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; display: flex; justify-content: space-between; align-items: center; color: var(--sage-dark); }
+        .flow-body { padding: 0 20px 20px; font-size: 15px; opacity: 0.9; }
 
         /* Booking Form */
-        .booking-box {
-            background: var(--sage-dark);
-            color: var(--sage-light);
-            padding: 50px 30px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(95, 111, 82, 0.2);
-        }
-        .booking-box h2 { color: var(--sage-light); text-align: center; }
-        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .booking-box { background: var(--sage-dark); color: var(--sage-light); padding: 50px 30px; border-radius: 30px; }
+        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; text-align: left; }
         .full-width { grid-column: span 2; }
-        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; display: block; color: var(--sage-mid); font-weight: 600; }
-        input, select, textarea {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 14px;
-            color: var(--sage-light);
-            border-radius: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        input:focus { background: rgba(255, 255, 255, 0.15); outline: none; border-color: var(--sage-mid); }
-        option { color: #333; }
+        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; display: block; color: var(--sage-mid); }
+        input, select, textarea { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 14px; color: white; border-radius: 10px; width: 100%; box-sizing: border-box; }
+        .submit-btn { background: var(--sage-mid); color: var(--sage-dark); border: none; padding: 18px; font-weight: 700; border-radius: 50px; cursor: pointer; width: 100%; margin-top: 20px; font-size: 16px; }
 
-        .submit-btn {
-            background: var(--sage-mid);
-            color: var(--sage-dark);
-            border: none;
-            padding: 18px;
-            font-weight: 700;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        .submit-btn:hover { background: var(--sage-light); transform: scale(1.02); }
-
-        /* Footer */
         footer { text-align: center; padding: 50px 20px; color: var(--sage-dark); }
         .social-link { color: var(--sage-dark); text-decoration: none; font-size: 22px; margin-top: 15px; display: inline-block; }
 
-        @media (max-width: 768px) {
-            .grid-form { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
-            nav { justify-content: center; }
-            .nav-links { display: none; }
-        }
+        @media (max-width: 768px) { .grid-form { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } nav { justify-content: center; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">KENSHOLOGY</a>
-        <div class="nav-links">
-            <a href="#services">Layanan</a>
-            <a href="#flow">Alur</a>
-            <a href="#booking">Booking</a>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <h1>Restore Your Balance</h1>
-        <p>Pengalaman relaksasi premium yang menenangkan, langsung di ruang pribadi Anda.</p>
-        <a href="#booking" class="btn-sage">Mulai Pemulihan</a>
-    </section>
-
-    <section id="services">
-        <div class="section-title">
-            <h2>Pilihan Treatment</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Fullbody Massage</h3>
-                <ul class="price-list">
-                    <li><span>60 Menit</span> <span>250k</span></li>
-                    <li><span>90 Menit</span> <span>300k</span></li>
-                    <li><span>120 Menit</span> <span>350k</span></li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Massage + Totok Wajah</h3>
-                <ul class="price-list">
-                    <li><span>90 Menit</span> <span>350k</span></li>
-                    <li><span>120 Menit</span> <span>400k</span></li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Massage + Reflexology</h3>
-                <ul class="price-list">
-                    <li><span>90 Menit</span> <span>350k</span></li>
-                    <li><span>120 Menit</span> <span>400k</span></li>
-                </ul>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
-            <i class="fas fa-check-circle"></i> Harga sudah termasuk biaya transport terapis.
-        </p>
-    </section>
-
-    <section id="flow">
-        <div class="section-title">
-            <h2>Experience Flow</h2>
-        </div>
-        <details>
-            <summary>01. Consultation</summary>
-            <div class="flow-body">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif dan aman.</div>
-        </details>
-        <details>
-            <summary>02. Arrival & Setup</summary>
-            <div class="flow-body">Terapis menyiapkan alat steril dan aromaterapi untuk merubah ruangan Anda menjadi spa pribadi.</div>
-        </details>
-        <details>
-            <summary>03. Personalized Recovery</summary>
-            <div class="flow-body">Proses terapi mendalam yang fokus pada titik otot yang tegang dan relaksasi saraf.</div>
-        </details>
-        <details>
-            <summary>04. Post-Session Guidance</summary>
-            <div class="flow-body">Tips peregangan dan hidrasi untuk memaksimalkan manfaat pemulihan setelah sesi.</div>
-        </details>
-    </section>
-
-    <section id="booking">
-        <div class="booking-box">
-            <h2>Reservasi Sesi Anda</h2>
-            <form id="sageBookingForm" class="grid-form">
-                <div>
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="name" placeholder="Nama Anda" required>
-                </div>
-                <div>
-                    <label>Jenis Kelamin Anda</label>
-                    <select id="custGender" required>
-                        <option value="">-- Pilih --</option>
-                        <option>Pria</option>
-                        <option>Wanita</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Jenis Treatment</label>
-                    <select id="treatment" required>
-                        <option value="">-- Pilih Layanan --</option>
-                        <option>Fullbody Massage</option>
-                        <option>Massage + Totok Wajah</option>
-                        <option>Massage + Reflexology</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Durasi Pijat</label>
-                    <select id="duration" required>
-                        <option value="">-- Pilih Durasi --</option>
-                        <option>60 Menit</option>
-                        <option>90 Menit</option>
-                        <option>120 Menit</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Preferensi Terapis</label>
-                    <select id="therapist" required>
-                        <option value="">-- Pilih Terapis --</option>
-                        <option>Laki-laki</option>
-                        <option>Perempuan</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Tanggal Rencana</label>
-                    <input type="date" id="date" required>
-                </div>
-                <div class="full-width">
-                    <label>Alamat Lengkap & Keluhan</label>
-                    <textarea id="notes" rows="3" placeholder="Jl. Contoh No.123 / Keluhan punggung bawah"></textarea>
-                </div>
-                <button type="submit" class="submit-btn full-width">KONFIRMASI VIA WHATSAPP</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 KENSHOLOGY - Private Therapeutic Wellness</p>
-        <a href="https://www.instagram.com/kenshology?igsh=eXVjeTlmZW9qNnNu" target="_blank" class="social-link">
-            <i class="fab fa-instagram"></i> @kenshology
-        </a>
-    </footer>
-
-    <script>
-        document.getElementById("sageBookingForm").addEventListener("submit", function(e){
-            e.preventDefault();
-            const message = `Halo Kenshology, saya ingin reservasi session.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nLokasi/Keluhan: ${document.getElementById("notes").value}\n\n(Harga All-in Transport)`;
-            window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
-        });
-    </script>
-
-</body>
-</html>
+        <a href="#" class="nav-logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAYAAADD98FkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodWLBCRqXIhgQFSUIidL3AUMWInUF8DZBbS6YF2H87TL7Lw975/5uPz9357z731nH/v9955554H3CrKYBCB6Lh6pE98D/I59PI439AIBmACwAAY80L84HshNIBO8U7D7C7WByzAw6I0AkT4CRA9E8E8T1H/XwR6y5Y9V6Abo5TADiC6m83C+5K6G+y3iV3G+IADIA4D9O+XyEAh8BfD754uP8Pz788uO3v0K4P8uH6X3/D5840m+92fM0D/A/gC4D789m88A/89O/89++H8M8B8Sfw8++68A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/w8/88++9/9/++A/S/
+                
