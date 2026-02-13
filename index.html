@@ -1,210 +1,277 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenshology | Premium Massage & Healing</title>
+<title>Kenshology | Private Therapeutic Wellness</title>
 
-<!-- FAVICON -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-<circle cx='50' cy='50' r='48' fill='none' stroke='%23b58e58' stroke-width='6'/>
-<text x='50%' y='60%' text-anchor='middle' font-size='42' fill='%23b58e58'>禅</text>
-</svg>">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body{
-    font-family:'Plus Jakarta Sans',sans-serif;
-    background:#fcfaf7;
-    color:#1a1a1a;
+:root {
+    --beige: #F4EFEA;
+    --brown: #B8A89A;
+    --charcoal: #2C2C2C;
+    --olive: #8C9A8A;
 }
 
-/* animation */
-.fade-up{
-    opacity:0;
-    transform:translateY(20px);
-    animation:fadeUp .9s ease forwards;
-}
-.delay-1{animation-delay:.2s}
-.delay-2{animation-delay:.4s}
-.delay-3{animation-delay:.6s}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-@keyframes fadeUp{
-    to{opacity:1;transform:none}
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--beige);
+    color: var(--charcoal);
+    line-height: 1.6;
 }
 
-/* button */
-.btn-gold{
-    background:#b58e58;
-    transition:.3s;
-}
-.btn-gold:hover{
-    background:#967343;
-    transform:translateY(-2px);
+h1,h2,h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight:600;
 }
 
-/* card */
-.card{
-    border:1px solid #e5e7eb;
-    transition:.4s;
+section { padding:80px 10%; }
+
+.hero {
+    text-align:center;
+    padding:120px 10%;
+    background: linear-gradient(rgba(244,239,234,0.95), rgba(244,239,234,0.95)),
+    url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80');
+    background-size:cover;
+    background-position:center;
 }
-.card:hover{
-    border-color:#b58e58;
-    transform:translateY(-6px);
-    box-shadow:0 20px 30px rgba(0,0,0,.06);
+
+.hero h1 { font-size:3rem; margin-bottom:20px; }
+.hero p { margin-bottom:20px; }
+
+.buttons a {
+    text-decoration:none;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:30px;
+    font-weight:500;
+    transition:.3s ease;
+}
+
+.btn-primary {
+    background:var(--charcoal);
+    color:white;
+}
+
+.btn-secondary {
+    border:1px solid var(--charcoal);
+    color:var(--charcoal);
+}
+
+.btn-secondary:hover {
+    background:var(--brown);
+    color:white;
+    border:none;
+}
+
+.about, .experience { text-align:center; }
+
+.services { background:white; }
+
+.service-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-top:40px;
+}
+
+.card {
+    background:var(--beige);
+    padding:30px;
+    border-radius:20px;
+}
+
+.experience-steps {
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+}
+
+.step {
+    background:white;
+    padding:25px;
+    border-radius:20px;
+}
+
+.booking {
+    text-align:center;
+    background:var(--olive);
+    color:white;
+}
+
+.booking-form {
+    max-width:500px;
+    margin:40px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding:14px;
+    border-radius:12px;
+    border:none;
+    font-family:'Inter', sans-serif;
+}
+
+.booking-form textarea {
+    resize:none;
+    height:100px;
+}
+
+.booking-form button {
+    padding:16px;
+    border-radius:30px;
+    border:none;
+    background:var(--charcoal);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.booking-form button:hover { background:black; }
+
+footer {
+    text-align:center;
+    padding:30px;
+    background:var(--beige);
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header class="bg-[#1a1a1a] text-white text-center py-20 px-4">
-    <div class="flex justify-center mb-6 fade-up">
-        <svg width="70" height="70" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="none" stroke="#b58e58" stroke-width="4"/>
-            <text x="50%" y="60%" text-anchor="middle" font-size="42" fill="#b58e58">禅</text>
-        </svg>
-    </div>
+<section class="hero">
+<h1>Kenshology</h1>
+<p><strong>The Art & Science of Conscious Recovery</strong></p>
+<p>Private Therapeutic Wellness, Delivered to Your Space.</p>
+<div class="buttons">
+<a href="#booking" class="btn-primary">Book Session</a>
+<a href="https://wa.me/6285893122538" target="_blank" class="btn-secondary">WhatsApp Booking</a>
+</div>
+</section>
 
-    <h1 class="text-4xl md:text-5xl font-bold tracking-[0.25em] uppercase fade-up delay-1">
-        Kenshology
-    </h1>
+<section class="about">
+<h2>A Different Kind of Recovery</h2>
+<p style="margin-top:20px; max-width:700px; margin-inline:auto;">
+Kenshology is designed for those who seek mindful bodywork beyond ordinary massage.
+Each session is personalized, private, and focused on conscious muscle recovery.
+</p>
+</section>
 
-    <p class="text-[#b58e58] tracking-widest text-sm uppercase mt-4 fade-up delay-2">
-        Wellness & Traditional Healing
-    </p>
+<section class="services">
+<h2 style="text-align:center;">Services</h2>
+<div class="service-grid">
 
-    <p class="mt-6 text-gray-400 max-w-lg mx-auto italic fade-up delay-3">
-        “Temukan ketenangan jiwa dan raga melalui sentuhan profesional.”
-    </p>
-</header>
-
-<!-- SERVICES -->
-<section class="max-w-5xl mx-auto py-20 px-6">
-<h2 class="text-3xl font-bold text-center mb-14 uppercase fade-up">Daftar Layanan</h2>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-<!-- CARD 1 -->
-<div class="card bg-white p-6 rounded-2xl fade-up delay-1">
-    <span class="text-xs font-bold text-[#b58e58] uppercase">Basic Ritual</span>
-    <h3 class="font-bold text-lg mt-1">Fullbody Massage</h3>
-    <div class="mt-4 space-y-2 text-sm">
-        <div class="flex justify-between"><span>60 Menit</span><b>200k</b></div>
-        <div class="flex justify-between"><span>90 Menit</span><b>250k</b></div>
-        <div class="flex justify-between"><span>120 Menit</span><b>300k</b></div>
-    </div>
+<div class="card">
+<h3>Fullbody Massage</h3>
+<p>60 menit — Rp250.000</p>
+<p>90 menit — Rp300.000</p>
+<p>120 menit — Rp350.000</p>
 </div>
 
-<!-- CARD 2 (FIXED TEXT) -->
-<div class="card bg-white p-6 rounded-2xl border-l-4 fade-up delay-2" style="border-left-color:#b58e58">
-    <span class="text-xs font-bold text-[#b58e58] uppercase">Face & Body Zen</span>
-    <h3 class="font-bold text-lg mt-1">Massage + Totok Wajah</h3>
-    <div class="mt-4 space-y-2 text-sm">
-        <div class="flex justify-between"><span>90 Menit</span><b>300k</b></div>
-        <div class="flex justify-between"><span>120 Menit</span><b>350k</b></div>
-    </div>
+<div class="card">
+<h3>Massage + Totok Wajah</h3>
+<p>90 menit — Rp350.000</p>
+<p>120 menit — Rp400.000</p>
 </div>
 
-<!-- CARD 3 -->
-<div class="card bg-white p-6 rounded-2xl border-l-4 fade-up delay-3" style="border-left-color:#b58e58">
-    <span class="text-xs font-bold text-[#b58e58] uppercase">Total Recovery</span>
-    <h3 class="font-bold text-lg mt-1">Massage + Reflexology</h3>
-    <div class="mt-4 space-y-2 text-sm">
-        <div class="flex justify-between"><span>90 Menit</span><b>300k</b></div>
-        <div class="flex justify-between"><span>120 Menit</span><b>350k</b></div>
-    </div>
+<div class="card">
+<h3>Massage + Reflexology</h3>
+<p>90 menit — Rp350.000</p>
+<p>120 menit — Rp400.000</p>
 </div>
 
 </div>
 </section>
 
-<!-- BOOKING -->
-<section id="booking" class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-xl mb-20 mx-4 fade-up">
-<h3 class="text-2xl font-bold text-center mb-8 uppercase">Reservasi Online</h3>
-
-<div class="space-y-6">
-<input id="name" type="text" placeholder="Nama Lengkap" class="w-full p-4 bg-gray-50 border rounded-xl">
-
-<div class="grid grid-cols-2 gap-4">
-<select id="gender" class="p-4 bg-gray-50 border rounded-xl">
-<option>Pria</option>
-<option>Wanita</option>
-</select>
-<input id="date" type="date" class="p-4 bg-gray-50 border rounded-xl">
-</div>
-
-<select id="treatment" class="w-full p-4 bg-gray-50 border rounded-xl">
-<option>Fullbody Massage 60 Menit (200k)</option>
-<option>Fullbody Massage 90 Menit (250k)</option>
-<option>Fullbody Massage 120 Menit (300k)</option>
-<option>Massage + Totok Wajah 90 Menit (300k)</option>
-<option>Massage + Totok Wajah 120 Menit (350k)</option>
-<option>Massage + Reflexology 90 Menit (300k)</option>
-<option>Massage + Reflexology 120 Menit (350k)</option>
-</select>
-
-<button onclick="sendToWA()" class="w-full btn-gold text-white py-5 rounded-xl font-bold uppercase tracking-widest">
-Konfirmasi via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
-</button>
+<section class="experience">
+<h2>The Kenshology Experience</h2>
+<div class="experience-steps">
+<div class="step">Consultation</div>
+<div class="step">Arrival & Setup</div>
+<div class="step">Personalized Recovery</div>
+<div class="step">Post-Session Guidance</div>
 </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-[#1a1a1a] text-white py-12 text-center">
-<p class="uppercase tracking-widest text-sm mb-6">Connect with us</p>
+<section class="booking" id="booking">
+<h2>By Appointment Only</h2>
+<p>Private • Exclusive • Limited Slots</p>
 
-<div class="flex justify-center space-x-8 mb-8">
-<a href="https://www.instagram.com/kenshology?igsh=eXVjeTlmZW9qNnNu" target="_blank" class="hover:text-[#b58e58]">
-<i class="fab fa-instagram text-3xl"></i>
-</a>
-<a href="https://www.tiktok.com/@kenshologymassage" target="_blank" class="hover:text-[#b58e58]">
-<i class="fab fa-tiktok text-3xl"></i>
-</a>
-</div>
+<form id="bookingForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="booking-form">
 
-<p class="text-gray-500 text-xs">© 2026 Kenshology. Modern Healing Experience.</p>
+<input type="text" name="name" id="name" placeholder="Full Name" required>
+
+<select name="gender" id="gender" required>
+<option value="">Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+
+<input type="tel" name="phone" id="phone" placeholder="WhatsApp Number" required>
+
+<select name="service" id="service" required>
+<option value="">Select Service</option>
+<option>Fullbody Massage - 60 menit</option>
+<option>Fullbody Massage - 90 menit</option>
+<option>Fullbody Massage - 120 menit</option>
+<option>Massage + Totok Wajah - 90 menit</option>
+<option>Massage + Totok Wajah - 120 menit</option>
+<option>Massage + Reflexology - 90 menit</option>
+<option>Massage + Reflexology - 120 menit</option>
+</select>
+
+<input type="date" name="date" id="date" required>
+
+<textarea name="notes" id="notes" placeholder="Additional Notes (Optional)"></textarea>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+</section>
+
+<footer>
+© 2026 Kenshology. Private Therapeutic Wellness.
 </footer>
 
-<!-- WHATSAPP SCRIPT -->
 <script>
-function sendToWA(){
-    const name=document.getElementById('name').value;
-    const gender=document.getElementById('gender').value;
-    const date=document.getElementById('date').value;
-    const treatment=document.getElementById('treatment').value;
+document.getElementById("bookingForm").addEventListener("submit", function(e){
 
-    if(!name){
-        alert("Mohon isi nama terlebih dahulu");
-        return;
-    }
+e.preventDefault();
 
-    const phone="6285719071230";
-    const message=`Halo Kenshology,
+const name = document.getElementById("name").value;
+const gender = document.getElementById("gender").value;
+const phone = document.getElementById("phone").value;
+const service = document.getElementById("service").value;
+const date = document.getElementById("date").value;
+const notes = document.getElementById("notes").value;
 
-Saya ingin melakukan reservasi:
-Nama: ${name}
+const message = `Hello Kenshology,
+Booking Request:
+
+Name: ${name}
 Gender: ${gender}
-Tanggal: ${date}
-Treatment: ${treatment}
+Phone: ${phone}
+Service: ${service}
+Date: ${date}
+Notes: ${notes}`;
 
-Mohon info ketersediaan slot. Terima kasih.`;
+const encodedMessage = encodeURIComponent(message);
 
-    window.open(
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-        "_blank"
-    );
-}
+window.open(`https://wa.me/6285893122538?text=${encodedMessage}`, '_blank');
+
+this.submit();
+
+});
 </script>
 
 </body>
