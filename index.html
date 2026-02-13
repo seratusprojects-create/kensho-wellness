@@ -7,7 +7,7 @@
     
     <link rel="icon" type="image/png" href="logo-kenshology.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -21,33 +21,33 @@
         }
 
         html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg-offwhite); color: var(--deep-black); line-height: 1.7; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg-offwhite); color: var(--deep-black); line-height: 1.8; overflow-x: hidden; }
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--deep-black); }
 
-        /* FIX LOGO: Polos & Spasi Lega */
+        /* NAVIGASI MEWAH & PRESISI */
         nav {
-            padding: 25px 0; 
+            padding: 25px 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(249, 248, 245, 0.98);
+            background: rgba(249, 248, 245, 0.95);
             backdrop-filter: blur(15px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(22, 19, 19, 0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
         }
         .nav-logo-container { display: flex; justify-content: center; width: 100%; }
         .nav-logo img {
             height: 45px; 
             width: auto;
-            display: block;
-            filter: none !important; 
-            mix-blend-mode: normal !important; 
+            filter: none !important;
+            mix-blend-mode: normal !important;
         }
 
+        /* HERO SECTION */
         .hero {
             height: 100vh;
             display: flex;
@@ -56,70 +56,75 @@
             align-items: center;
             text-align: center;
             padding: 0 25px;
-            background: linear-gradient(rgba(249, 248, 245, 0.75), rgba(249, 248, 245, 0.75)), url('https://images.unsplash.com/photo-1544161515-436cefb657f8?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(249, 248, 245, 0.4), rgba(249, 248, 245, 0.4)), 
+                        url('https://images.unsplash.com/photo-1544161515-436cefb657f8?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
-            padding-top: 100px;
+            padding-top: 80px;
         }
         
         .hero-logo-large {
-            width: 320px; 
-            max-width: 75%; 
-            margin-bottom: 50px;
-            display: block;
-            filter: none !important; 
-            mix-blend-mode: normal !important; 
+            width: 350px; 
+            max-width: 80%; 
+            margin-bottom: 50px; /* Jarak lega agar tidak menempel */
+            filter: none !important;
+            mix-blend-mode: normal !important;
             animation: fadeIn 2s ease;
         }
 
-        .hero h1 { font-size: clamp(38px, 9vw, 65px); margin: 0 0 10px 0; font-weight: 500; }
-        .hero p { font-size: 18px; max-width: 550px; opacity: 0.8; margin-bottom: 35px; font-weight: 300; }
+        .hero h1 { font-size: clamp(40px, 8vw, 70px); margin: 0 0 15px 0; font-weight: 400; }
+        .hero p { font-size: 18px; max-width: 600px; opacity: 0.8; margin-bottom: 40px; font-weight: 300; letter-spacing: 0.5px; }
 
         .btn-luxury {
             background: var(--deep-black);
             color: var(--white);
-            padding: 20px 55px;
+            padding: 22px 60px;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px;
-            transition: 0.4s;
+            letter-spacing: 3px;
+            font-size: 12px;
+            transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
             border: 1px solid var(--deep-black);
-            display: inline-block;
         }
+        .btn-luxury:hover { background: transparent; color: var(--deep-black); }
 
-        /* LAYANAN (KEMBALI KE STRUKTUR LENGKAP) */
-        section { padding: 100px 25px; max-width: 1200px; margin: auto; }
-        .section-title h2 { font-size: 40px; color: var(--sand-warm); text-align: center; margin-bottom: 50px; }
-        .section-title h2::after { content: ''; display: block; width: 60px; height: 1px; background: var(--sand-warm); margin: 20px auto; }
+        /* LAYANAN PROFESIONAL (DENGAN GAMBAR WAJAH) */
+        section { padding: 120px 25px; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 70px; }
+        .section-title h2 { font-size: 42px; color: var(--sand-warm); margin-bottom: 20px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 1px; background: var(--sand-warm); margin: 0 auto; }
 
-        .service-layout { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
         .service-image {
-            flex: 1;
-            min-width: 320px;
-            height: 550px;
-            background: url('1000072938.jpg') center/cover;
-            border: 1px solid rgba(163, 147, 132, 0.2);
+            height: 650px;
+            background: url('foto-pijat-wajah.jpeg') center/cover;
+            box-shadow: 20px 20px 0px var(--stone-light); /* Efek desain premium */
         }
-        .service-content { flex: 1.2; min-width: 320px; }
-
         .service-card {
             background: var(--white);
-            padding: 40px;
-            border: 1px solid rgba(163, 147, 132, 0.15);
-            margin-bottom: 25px;
+            padding: 45px;
+            border: 1px solid rgba(163, 147, 132, 0.1);
+            margin-bottom: 30px;
+            transition: 0.4s;
         }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
         .price-list { list-style: none; padding: 0; margin: 0; }
-        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(163, 147, 132, 0.1); padding: 15px 0; }
-        .price-list li span:last-child { font-weight: 700; color: var(--sand-warm); }
+        .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 15px 0; font-size: 15px; }
+        .price-list li span:last-child { font-weight: 600; color: var(--sand-warm); }
 
-        /* FLOW (KEMBALI KE DESAIN AWAL) */
+        /* EXPERIENCE FLOW (PARALLAX DENGAN AMBER BOTTLE) */
         .flow-section-wrapper {
-            background: linear-gradient(rgba(249, 248, 245, 0.92), rgba(249, 248, 245, 0.92)), url('1000072942.jpg');
+            background: linear-gradient(rgba(249, 248, 245, 0.85), rgba(249, 248, 245, 0.85)), 
+                        url('foto-botol-amber.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 100px 0;
+            padding: 120px 0;
             width: 100vw;
             position: relative;
             left: 50%;
@@ -127,67 +132,74 @@
             margin-left: -50vw;
             margin-right: -50vw;
         }
-        .flow-inner { max-width: 900px; margin: auto; padding: 0 25px; }
-        details { background: var(--white); margin-bottom: 12px; border: 1px solid rgba(163, 147, 132, 0.15); }
-        summary { padding: 25px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 20px; }
-        
-        /* FORM BOOKING (LENGKAP SEMUA FITUR) */
-        .booking-box { background: var(--slate-grey); color: var(--white); padding: 80px 50px; margin-top: 50px; }
-        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+        .flow-inner { max-width: 800px; margin: auto; padding: 0 25px; }
+        details { background: var(--white); margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.05); cursor: pointer; }
+        summary { padding: 30px; font-family: 'Playfair Display', serif; font-size: 22px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; font-family: 'Inter'; font-weight: 300; }
+        details[open] summary::after { content: '-'; }
+        .flow-content { padding: 0 30px 30px 30px; font-weight: 300; color: #666; }
+
+        /* BOOKING BOX MEWAH */
+        .booking-box { background: var(--slate-grey); color: var(--white); padding: 100px 60px; }
+        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
         .full-width { grid-column: span 2; }
-        label { color: var(--white); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+        label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; opacity: 0.8; }
         input, select, textarea {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 16px;
+            padding: 18px;
             color: var(--white);
             width: 100%;
             box-sizing: border-box;
+            font-family: 'Inter';
+            border-radius: 0;
         }
         .submit-btn {
             background: var(--deep-black);
             color: var(--white);
             border: none;
-            padding: 22px;
+            padding: 25px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             cursor: pointer;
             width: 100%;
             font-weight: 600;
+            transition: 0.4s;
+            margin-top: 20px;
         }
+        .submit-btn:hover { background: var(--white); color: var(--deep-black); }
 
-        footer { text-align: center; padding: 100px 25px; color: var(--sand-warm); font-size: 12px; }
+        footer { text-align: center; padding: 120px 25px; color: var(--sand-warm); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .service-layout { grid-template-columns: 1fr; }
+            .service-image { height: 400px; box-shadow: 15px 15px 0px var(--stone-light); }
+            section { padding: 80px 25px; }
             .grid-form { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
-            .service-image { height: 350px; }
         }
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(15px);} to {opacity: 1; transform: translateY(0);} }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-logo-container">
-            <a href="#" class="nav-logo">
-                <img src="logo-kenshology.png" alt="Kenshology Logo">
-            </a>
+            <a href="#" class="nav-logo"><img src="logo-kenshology.png" alt="Kenshology"></a>
         </div>
     </nav>
 
     <section class="hero">
-        <img src="logo-kenshology.png" alt="Kenshology" class="hero-logo-large">
+        <img src="logo-kenshology.png" alt="Kenshology Logo" class="hero-logo-large">
         <h1>Restore Your Balance</h1>
-        <p>Pengalaman relaksasi premium yang menenangkan, langsung di ruang pribadi Anda.</p>
-        <a href="#booking" class="btn-luxury">Mulai Pemulihan</a>
+        <p>Premium private therapeutic wellness curated for your complete rejuvenation.</p>
+        <a href="#booking" class="btn-luxury">Reserve a Session</a>
     </section>
 
     <section id="services">
         <div class="section-title"><h2>Pilihan Treatment</h2></div>
         <div class="service-layout">
-            <div class="service-image"></div> 
-            <div class="service-content">
+            <div class="service-image"></div> <div class="service-content">
                 <div class="service-card">
                     <h3>Fullbody Massage</h3>
                     <ul class="price-list">
@@ -217,16 +229,29 @@
     <div class="flow-section-wrapper" id="flow">
         <div class="flow-inner">
             <div class="section-title"><h2>Experience Flow</h2></div>
-            <details><summary>01. Consultation</summary><div style="padding: 20px;">Analisis singkat keluhan tubuh Anda.</div></details>
-            <details><summary>02. Arrival & Setup</summary><div style="padding: 20px;">Terapis menyiapkan alat steril dan aromaterapi.</div></details>
-            <details><summary>03. Personalized Recovery</summary><div style="padding: 20px;">Proses terapi mendalam pada titik otot yang tegang.</div></details>
-            <details><summary>04. Post-Session Guidance</summary><div style="padding: 20px;">Tips peregangan dan hidrasi pasca sesi.</div></details>
+            <details open>
+                <summary>01. Consultation</summary>
+                <div class="flow-content">Analisis mendalam mengenai kondisi fisik dan keluhan tubuh Anda untuk menentukan teknik terapi yang paling efektif.</div>
+            </details>
+            <details>
+                <summary>02. Arrival & Setup</summary>
+                <div class="flow-content">Terapis profesional kami hadir dengan perlengkapan steril, aromaterapi pilihan, dan musik relaksasi untuk mengubah ruang Anda menjadi spa pribadi.</div>
+            </details>
+            <details>
+                <summary>03. Personalized Recovery</summary>
+                <div class="flow-content">Sesi terapi dilakukan dengan fokus pada titik ketegangan otot untuk mengembalikan sirkulasi dan kebugaran total.</div>
+            </details>
+            <details>
+                <summary>04. Post-Session Guidance</summary>
+                <div class="flow-content">Edukasi pasca terapi meliputi saran hidrasi dan teknik peregangan ringan untuk menjaga hasil pemulihan lebih lama.</div>
+            </details>
         </div>
     </div>
 
     <section id="booking">
         <div class="booking-box">
-            <h2 style="text-align: center; color: var(--white); font-family: 'Playfair Display', serif;">Reservasi Sesi Anda</h2>
+            <h2 style="text-align: center; color: var(--white); margin-bottom: 20px;">Reservasi Sesi Anda</h2>
+            <p style="text-align: center; opacity: 0.7; font-weight: 300;">Pilih waktu terbaik untuk pemulihan tubuh Anda.</p>
             <form id="sageBookingForm" class="grid-form">
                 <div><label>Nama Lengkap</label><input type="text" id="name" placeholder="Nama Anda" required></div>
                 <div><label>Jenis Kelamin</label><select id="custGender" required><option value="">-- Pilih --</option><option>Pria</option><option>Wanita</option></select></div>
@@ -234,20 +259,23 @@
                 <div><label>Durasi</label><select id="duration" required><option value="">-- Pilih Durasi --</option><option>60 Menit</option><option>90 Menit</option><option>120 Menit</option></select></div>
                 <div><label>Preferensi Terapis</label><select id="therapist" required><option value="">-- Pilih Terapis --</option><option>Laki-laki</option><option>Perempuan</option></select></div>
                 <div><label>Tanggal Rencana</label><input type="date" id="date" required></div>
-                <div class="full-width"><label>Alamat & Keluhan</label><textarea id="notes" rows="3" placeholder="Jl. Contoh No.123 / Keluhan punggung"></textarea></div>
-                <button type="submit" class="submit-btn full-width">KONFIRMASI VIA WHATSAPP</button>
+                <div class="full-width"><label>Alamat Lengkap & Keluhan Spesifik</label><textarea id="notes" rows="4" placeholder="Contoh: Jl. Kemang No. 1 / Keluhan sakit di pinggang kiri"></textarea></div>
+                <button type="submit" class="submit-btn full-width">Kirim Reservasi ke WhatsApp</button>
             </form>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 KENSHOLOGY - Private Therapeutic Wellness</p>
+        <div style="margin-top: 30px;">
+            <a href="https://www.instagram.com/kenshology" target="_blank" style="color:var(--sand-warm); text-decoration:none; font-size: 24px;"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <script>
         document.getElementById("sageBookingForm").addEventListener("submit", function(e){
             e.preventDefault();
-            const message = `Halo Kenshology, reservasi session.\nNama: ${document.getElementById("name").value}\nLayanan: ${document.getElementById("treatment").value}`;
+            const message = `Halo Kenshology, saya ingin reservasi session.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nLokasi/Keluhan: ${document.getElementById("notes").value}`;
             window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
         });
     </script>
