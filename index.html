@@ -5,178 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kenshology | Private Therapeutic Wellness</title>
-<meta name="description" content="Kenshology - Private Therapeutic Wellness. Premium home massage & conscious recovery experience. By appointment only.">
-
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕊</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: #F4EFEA; color: #2C2C2C; line-height: 1.6; }
+section { padding: 80px 20px; max-width: 900px; margin: auto; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-body {
-margin: 0;
-font-family: 'Inter', sans-serif;
-background: #F4EFEA;
-color: #2C2C2C;
-line-height: 1.6;
-}
-
-section {
-padding: 80px 20px;
-max-width: 900px; /* Lebih ramping agar fokus di mobile */
-margin: auto;
-}
-
-h1, h2, h3 {
-font-family: 'Playfair Display', serif;
-}
-
-.hero {
-text-align: center;
-padding-top: 100px;
-animation: fadeIn 1.5s ease;
-}
-
-.hero h1 { font-size: 52px; margin-bottom: 10px; color: #2C2C2C; }
+.hero { text-align: center; padding-top: 100px; animation: fadeIn 1.5s ease; }
+.hero h1 { font-size: 52px; margin-bottom: 10px; }
 .hero h3 { font-weight: 400; margin-bottom: 20px; color: #555; }
 
-.btn-primary {
-background: #2C2C2C;
-color: white;
-padding: 16px 35px;
-border-radius: 40px;
-text-decoration: none;
-display: inline-block;
-margin: 10px;
-font-weight: 500;
-transition: 0.3s;
+.btn-primary { background: #2C2C2C; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; display: inline-block; margin: 10px; font-weight: 500; transition: 0.3s; }
+.btn-outline { border: 1px solid #2C2C2C; padding: 16px 35px; border-radius: 40px; text-decoration: none; color: #2C2C2C; display: inline-block; margin: 10px; transition: 0.3s; }
+
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #EEE; }
+
+/* TRANSPORT NOTE STYLE */
+.price-note-box {
+    background: #E8EDD1;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 25px;
+    border-left: 5px solid #8C9A8A;
+    font-size: 0.9rem;
 }
 
-.btn-outline {
-border: 1px solid #2C2C2C;
-padding: 16px 35px;
-border-radius: 40px;
-text-decoration: none;
-color: #2C2C2C;
-display: inline-block;
-margin: 10px;
-transition: 0.3s;
-}
-
-.services {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 20px;
-}
-
-.card {
-background: white;
-padding: 25px;
-border-radius: 20px;
-box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-border: 1px solid #EEE;
-}
-
-.price-note {
-font-size: 0.85rem;
-color: #666;
-margin-top: 15px;
-font-style: italic;
-}
-
-/* ACCORDION STYLE */
-.flow-container, .faq-container {
-margin-top: 30px;
-}
-
-details {
-background: white;
-margin-bottom: 12px;
-border-radius: 12px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
-
-summary {
-padding: 18px;
-cursor: pointer;
-font-weight: 500;
-list-style: none;
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-
+.flow-container, .faq-container { margin-top: 30px; }
+details { background: white; margin-bottom: 12px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+summary { padding: 18px; cursor: pointer; font-weight: 500; list-style: none; display: flex; align-items: center; justify-content: space-between; }
 summary::after { content: '＋'; color: #8C9A8A; transition: 0.3s; }
 details[open] summary::after { content: '✕'; transform: rotate(90deg); }
+.details-content { padding: 0 20px 20px 20px; color: #555; font-size: 0.95rem; animation: slideDown 0.3s ease; }
 
-.details-content {
-padding: 0 20px 20px 20px;
-color: #555;
-font-size: 0.95rem;
-animation: slideDown 0.3s ease;
-}
+.testimonials { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+.testi-item { background: #EBE4DD; padding: 20px; border-radius: 15px; flex: 1 1 250px; font-style: italic; font-size: 0.9rem; }
+.testi-item span { display: block; margin-top: 10px; font-weight: bold; font-family: 'Playfair Display'; }
 
-/* TESTIMONIALS */
-.testimonials {
-display: flex;
-flex-wrap: wrap;
-gap: 15px;
-margin-top: 30px;
-}
-
-.testi-item {
-background: #EBE4DD;
-padding: 20px;
-border-radius: 15px;
-flex: 1 1 250px;
-font-style: italic;
-font-size: 0.9rem;
-}
-
-.testi-item span {
-display: block;
-margin-top: 10px;
-font-weight: bold;
-font-style: normal;
-font-family: 'Playfair Display';
-}
-
-.booking {
-background: #8C9A8A;
-color: white;
-border-radius: 25px;
-padding: 60px 20px;
-text-align: center;
-}
-
-form {
-display: grid;
-gap: 12px;
-margin-top: 30px;
-max-width: 500px;
-margin-left: auto;
-margin-right: auto;
-}
-
-input, select, textarea {
-padding: 15px;
-border-radius: 12px;
-border: none;
-width: 100%;
-box-sizing: border-box;
-}
-
-button {
-background: #2C2C2C;
-color: white;
-padding: 18px;
-border: none;
-border-radius: 40px;
-font-size: 16px;
-font-weight: 600;
-cursor: pointer;
-transition: 0.3s;
-}
+.booking { background: #8C9A8A; color: white; border-radius: 25px; padding: 60px 20px; text-align: center; }
+form { display: grid; gap: 12px; margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+input, select, textarea { padding: 15px; border-radius: 12px; border: none; width: 100%; box-sizing: border-box; font-family: 'Inter'; }
+button { background: #2C2C2C; color: white; padding: 18px; border: none; border-radius: 40px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.3s; width: 100%; }
 
 @keyframes fadeIn { from {opacity:0; transform: translateY(15px);} to {opacity:1; transform: translateY(0);} }
 @keyframes slideDown { from {opacity:0; transform: translateY(-5px);} to {opacity:1; transform: translateY(0);} }
@@ -190,7 +62,7 @@ transition: 0.3s;
     <h3>The Art & Science of Conscious Recovery</h3>
     <p>Premium Home Service Therapeutic Wellness.</p>
     <a href="#booking" class="btn-primary">Book Now</a>
-    <a href="https://wa.me/6285893122538" class="btn-outline">Chat via WhatsApp</a>
+    <a href="https://wa.me/6285893122538" class="btn-outline">Chat WhatsApp</a>
 </section>
 
 <section>
@@ -209,7 +81,9 @@ transition: 0.3s;
             <p>90 menit – Rp350k<br>120 menit – Rp400k</p>
         </div>
     </div>
-    <p class="price-note">*Harga belum termasuk biaya transport (disesuaikan dengan jarak lokasi Anda).</p>
+    <div class="price-note-box">
+        ✨ <strong>All-Inclusive Price:</strong> Harga yang tertera sudah termasuk ongkos perjalanan terapis ke lokasi Anda. Tidak ada biaya tambahan tersembunyi.
+    </div>
 </section>
 
 <section>
@@ -234,55 +108,44 @@ transition: 0.3s;
     </div>
 </section>
 
-<section>
-    <h2>What They Say</h2>
-    <div class="testimonials">
-        <div class="testi-item">"Sangat profesional. Badan yang kaku setelah kerja lembur langsung enteng kembali. Recommended!" <span>— Pak Andi, Jaksel</span></div>
-        <div class="testi-item">"Tekniknya beda, benar-benar terasa seperti terapi medis tapi sangat menenangkan." <span>— Ibu Sari, BSD</span></div>
-    </div>
-</section>
-
-<section>
-    <h2>FAQ</h2>
-    <div class="faq-container">
-        <details>
-            <summary>Apakah terapis membawa perlengkapan?</summary>
-            <div class="details-content">Ya, terapis kami membawa minyak aromaterapi, alas kain, dan handuk steril. Anda cukup menyiapkan ruang yang nyaman.</div>
-        </details>
-        <details>
-            <summary>Kapan waktu terbaik untuk booking?</summary>
-            <div class="details-content">Karena slot terbatas, disarankan melakukan reservasi minimal 1 hari sebelumnya.</div>
-        </details>
-    </div>
-</section>
-
 <section id="booking" class="booking">
     <h2>Secure Your Slot</h2>
-    <p>Private • Exclusive • Limited Slots</p>
+    <p>Private • Exclusive • No Extra Travel Fee</p>
     <form id="bookingForm">
         <input type="text" id="name" placeholder="Nama Lengkap" required>
-        <select id="gender" required>
-            <option value="">Jenis Kelamin</option>
-            <option>Laki-laki</option>
-            <option>Perempuan</option>
-        </select>
-        <input type="tel" id="phone" placeholder="Nomor WhatsApp" required>
+        
         <select id="service" required>
             <option value="">Pilih Layanan</option>
             <option>Fullbody Massage</option>
             <option>Massage + Totok Wajah</option>
             <option>Massage + Reflexology</option>
         </select>
+
+        <select id="duration" required>
+            <option value="">Pilih Durasi</option>
+            <option>60 Menit</option>
+            <option>90 Menit</option>
+            <option>120 Menit</option>
+        </select>
+
         <input type="date" id="date" required>
-        <textarea id="notes" placeholder="Area keluhan (Contoh: Punggung bawah, leher kaku)"></textarea>
-        <button type="submit">Konfirmasi Booking</button>
+        <textarea id="notes" placeholder="Alamat lengkap & area keluhan tubuh"></textarea>
+        
+        <button type="submit">Konfirmasi Booking via WhatsApp</button>
     </form>
 </section>
 
 <script>
 document.getElementById("bookingForm").addEventListener("submit", function(e){
     e.preventDefault();
-    const message = `Halo Kenshology, saya ingin booking session.\n\nNama: ${document.getElementById("name").value}\nLayanan: ${document.getElementById("service").value}\nTanggal: ${document.getElementById("date").value}\nKeluhan: ${document.getElementById("notes").value}`;
+    const name = document.getElementById("name").value;
+    const service = document.getElementById("service").value;
+    const duration = document.getElementById("duration").value;
+    const date = document.getElementById("date").value;
+    const notes = document.getElementById("notes").value;
+
+    const message = `Halo Kenshology, saya ingin booking session.\n\nNama: ${name}\nLayanan: ${service}\nDurasi: ${duration}\nTanggal: ${date}\nCatatan/Alamat: ${notes}\n\n(Harga sudah termasuk transport)`;
+    
     window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
 });
 </script>
