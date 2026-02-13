@@ -21,6 +21,7 @@ margin: 0;
 font-family: 'Inter', sans-serif;
 background: #F4EFEA;
 color: #2C2C2C;
+line-height: 1.6;
 }
 
 section {
@@ -93,11 +94,69 @@ border-radius: 20px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.flow {
-display: grid;
-grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-gap: 20px;
-text-align:center;
+/* STYLE BARU UNTUK EXPERIENCE FLOW (ACCORDION) */
+.flow-container {
+max-width: 700px;
+margin: 0 auto;
+text-align: left;
+}
+
+details {
+background: white;
+margin-bottom: 15px;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+transition: 0.3s;
+}
+
+details[open] {
+box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+summary {
+padding: 20px;
+cursor: pointer;
+font-weight: 500;
+list-style: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+outline: none;
+}
+
+summary::-webkit-details-marker {
+display: none;
+}
+
+summary::after {
+content: '＋';
+font-size: 1.2rem;
+color: #8C9A8A;
+transition: 0.3s;
+}
+
+details[open] summary::after {
+content: '✕';
+transform: rotate(90deg);
+}
+
+.details-content {
+padding: 0 20px 20px 20px;
+color: #555;
+font-size: 0.95rem;
+animation: slideDown 0.4s ease;
+}
+
+.flow-icon {
+margin-right: 15px;
+font-size: 1.2rem;
+}
+
+/* ANIMASI */
+@keyframes slideDown {
+from { opacity: 0; transform: translateY(-10px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 .booking {
@@ -183,12 +242,35 @@ to {opacity:1; transform: translateY(0);}
 </section>
 
 <section>
-<h2>Experience Flow</h2>
-<div class="flow">
-<div>Consultation</div>
-<div>Arrival & Setup</div>
-<div>Personalized Recovery</div>
-<div>Post-Session Guidance</div>
+<h2 style="text-align: center; margin-bottom: 40px;">Experience Flow</h2>
+<div class="flow-container">
+    <details>
+        <summary><span class="flow-icon">💬</span> Consultation</summary>
+        <div class="details-content">
+            Sesi ngobrol singkat sebelum mulai untuk memahami kondisi tubuh, area yang sering pegal, atau cedera yang pernah dialami. Kami memastikan teknik yang digunakan sesuai dengan kebutuhan spesifik kamu hari ini.
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="flow-icon">🌿</span> Arrival & Setup</summary>
+        <div class="details-content">
+            Begitu sampai, kamu akan disambut dengan suasana tenang. Terapis kami akan menyiapkan perlengkapan steril dan minyak aromaterapi pilihan untuk memastikan kenyamanan maksimal sebelum sesi dimulai.
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="flow-icon">💆‍♂️</span> Personalized Recovery</summary>
+        <div class="details-content">
+            Inti dari layanan kami. Teknik pijat atau terapi akan difokuskan pada titik-titik ketegangan otot yang telah diidentifikasi saat konsultasi. Kami mengombinasikan tekanan yang tepat dengan teknik relaksasi untuk pemulihan optimal.
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="flow-icon">✨</span> Post-Session Guidance</summary>
+        <div class="details-content">
+            Setelah sesi selesai, kami tidak langsung melepasmu. Terapis akan memberikan saran peregangan mandiri di rumah atau tips gaya hidup agar manfaat relaksasi bertahan lebih lama dan pegal tidak cepat kembali.
+        </div>
+    </details>
 </div>
 </section>
 
