@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenshology | Private Therapeutic Wellness</title>
     
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo-icon.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,7 +25,7 @@
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.5px; color: var(--text-main); }
 
-        /* Premium Navigation */
+        /* Navigation Updated with Logo */
         nav {
             padding: 10px 5%;
             display: flex;
@@ -40,7 +40,7 @@
             border-bottom: 1px solid rgba(95, 111, 82, 0.1);
         }
         .nav-logo img {
-            height: 45px; /* Ukuran Logo Navigasi */
+            height: 50px; /* Ukuran logo di navigasi */
             width: auto;
             display: block;
         }
@@ -48,25 +48,26 @@
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(254, 250, 224, 0.8), rgba(254, 250, 224, 0.8)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(254, 250, 224, 0.75), rgba(254, 250, 224, 0.75)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
         }
-        .hero-logo img {
-            width: 140px; /* Ukuran Logo Tengah */
+        .hero-logo-large {
+            width: 180px; /* Logo besar di tengah hero */
             margin-bottom: 20px;
-            animation: fadeIn 1.5s ease;
+            animation: fadeIn 2s ease;
         }
-        .hero h1 { font-size: clamp(38px, 7vw, 64px); margin: 0 0 10px 0; }
-        .hero p { font-size: 18px; max-width: 600px; color: var(--sage-dark); font-weight: 300; margin-bottom: 30px; }
+        .hero h1 { font-size: clamp(42px, 8vw, 68px); margin-bottom: 10px; margin-top: 0; }
+        .hero p { font-size: 18px; max-width: 600px; color: var(--sage-dark); font-weight: 300; }
 
+        /* Buttons */
         .btn-sage {
             background: var(--sage-dark);
             color: var(--sage-light);
@@ -77,103 +78,112 @@
             transition: 0.3s;
             border: 2px solid var(--sage-dark);
             display: inline-block;
+            margin-top: 20px;
         }
         .btn-sage:hover { background: transparent; color: var(--sage-dark); }
 
-        /* Services */
-        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+        /* Sections */
+        section { padding: 100px 20px; max-width: 1000px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 36px; }
-        .section-title div { width: 40px; height: 2px; background: var(--sage-mid); margin: 10px auto; }
+        .section-title h2 { font-size: 38px; position: relative; display: inline-block; }
+        .section-title h2::after { content: ''; display: block; width: 40px; height: 2px; background: var(--sage-mid); margin: 10px auto; }
 
+        /* Service Cards */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .service-card {
             background: var(--sage-soft);
             padding: 35px;
             border-radius: 25px;
-            border: 1px solid rgba(169, 179, 136, 0.2);
             transition: 0.4s;
+            border: 1px solid rgba(169, 179, 136, 0.2);
         }
-        .service-card:hover { background: white; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .service-card:hover { transform: translateY(-5px); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .price-list { list-style: none; padding: 0; margin-top: 20px; }
         .price-list li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; font-weight: 500; }
+
+        /* Flow / Accordion */
+        details { background: var(--sage-soft); margin-bottom: 15px; border-radius: 15px; border: 1px solid transparent; transition: 0.3s; }
+        details[open] { border-color: var(--sage-mid); background: var(--white); }
+        summary { padding: 20px; cursor: pointer; font-family: 'Playfair Display', serif; font-size: 19px; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--sage-dark); }
+        summary::after { content: '\f0d7'; font-family: 'Font Awesome 5 Free'; font-weight: 900; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        .flow-body { padding: 0 20px 20px; color: var(--text-main); font-size: 15px; opacity: 0.9; }
 
         /* Booking Form */
         .booking-box {
             background: var(--sage-dark);
             color: var(--sage-light);
-            padding: 50px 35px;
-            border-radius: 35px;
+            padding: 50px 30px;
+            border-radius: 30px;
             box-shadow: 0 20px 40px rgba(95, 111, 82, 0.2);
         }
-        .booking-box h2 { color: var(--sage-light); text-align: center; margin-bottom: 30px; }
-        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .booking-box h2 { color: var(--sage-light); text-align: center; }
+        .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
         .full-width { grid-column: span 2; }
-        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; color: var(--sage-mid); }
+        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; display: block; color: var(--sage-mid); font-weight: 600; }
         input, select, textarea {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 14px;
-            color: white;
-            border-radius: 12px;
+            color: var(--sage-light);
+            border-radius: 10px;
             width: 100%;
             box-sizing: border-box;
-            font-family: 'Inter';
         }
-        input:focus { border-color: var(--sage-mid); outline: none; }
+        input:focus { background: rgba(255, 255, 255, 0.15); outline: none; border-color: var(--sage-mid); }
         option { color: #333; }
 
         .submit-btn {
             background: var(--sage-mid);
             color: var(--sage-dark);
             border: none;
-            padding: 20px;
+            padding: 18px;
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
             transition: 0.3s;
             font-size: 16px;
-            text-transform: uppercase;
+            margin-top: 10px;
         }
-        .submit-btn:hover { background: white; }
+        .submit-btn:hover { background: var(--sage-light); transform: scale(1.02); }
 
-        footer { text-align: center; padding: 60px 20px; color: var(--sage-dark); }
-        .social-link { color: var(--sage-dark); text-decoration: none; font-weight: bold; }
+        /* Footer */
+        footer { text-align: center; padding: 50px 20px; color: var(--sage-dark); }
+        .social-link { color: var(--sage-dark); text-decoration: none; font-size: 22px; margin-top: 15px; display: inline-block; transition: 0.3s; }
+        .social-link:hover { transform: translateY(-3px); opacity: 0.7; }
 
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
         @media (max-width: 768px) {
             .grid-form { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
-            nav { justify-content: center; }
+            nav { justify-content: center; padding: 10px 0; }
             .nav-links { display: none; }
         }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-logo">
-            <img src="logo.png" alt="Kenshology Logo">
-        </div>
+        <a href="#" class="nav-logo">
+            <img src="logo-kenshology.png" alt="Kenshology Logo">
+        </a>
         <div class="nav-links">
             <a href="#services">Layanan</a>
+            <a href="#flow">Alur</a>
             <a href="#booking">Booking</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-logo">
-            <img src="logo.png" alt="Kenshology">
-        </div>
+        <img src="logo-kenshology.png" alt="Kenshology" class="hero-logo-large">
         <h1>Restore Your Balance</h1>
-        <p>Premium Home Service Wellness & Recovery.</p>
-        <a href="#booking" class="btn-sage">RESERVE SESSION</a>
+        <p>Pengalaman relaksasi premium yang menenangkan, langsung di ruang pribadi Anda.</p>
+        <a href="#booking" class="btn-sage">Mulai Pemulihan</a>
     </section>
 
     <section id="services">
         <div class="section-title">
-            <h2>Our Signature Treatments</h2>
-            <div></div>
+            <h2>Pilihan Treatment</h2>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -185,20 +195,51 @@
                 </ul>
             </div>
             <div class="service-card">
-                <h3>Massage + Face/Reflexy</h3>
+                <h3>Massage + Totok Wajah</h3>
+                <ul class="price-list">
+                    <li><span>90 Menit</span> <span>350k</span></li>
+                    <li><span>120 Menit</span> <span>400k</span></li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Massage + Reflexology</h3>
                 <ul class="price-list">
                     <li><span>90 Menit</span> <span>350k</span></li>
                     <li><span>120 Menit</span> <span>400k</span></li>
                 </ul>
             </div>
         </div>
-        <p style="text-align: center; font-size: 14px; opacity: 0.8; margin-top: 30px;">*Harga sudah termasuk biaya transportasi terapis.</p>
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+            <i class="fas fa-check-circle"></i> Harga sudah termasuk biaya transport terapis.
+        </p>
+    </section>
+
+    <section id="flow">
+        <div class="section-title">
+            <h2>Experience Flow</h2>
+        </div>
+        <details>
+            <summary>01. Consultation</summary>
+            <div class="flow-body">Analisis singkat keluhan tubuh Anda agar terapi berjalan efektif dan aman.</div>
+        </details>
+        <details>
+            <summary>02. Arrival & Setup</summary>
+            <div class="flow-body">Terapis menyiapkan alat steril dan aromaterapi untuk merubah ruangan Anda menjadi spa pribadi.</div>
+        </details>
+        <details>
+            <summary>03. Personalized Recovery</summary>
+            <div class="flow-body">Proses terapi mendalam yang fokus pada titik otot yang tegang dan relaksasi saraf.</div>
+        </details>
+        <details>
+            <summary>04. Post-Session Guidance</summary>
+            <div class="flow-body">Tips peregangan dan hidrasi untuk memaksimalkan manfaat pemulihan setelah sesi.</div>
+        </details>
     </section>
 
     <section id="booking">
         <div class="booking-box">
-            <h2>Reservasi Sesi</h2>
-            <form id="finalBookingForm" class="grid-form">
+            <h2>Reservasi Sesi Anda</h2>
+            <form id="sageBookingForm" class="grid-form">
                 <div>
                     <label>Nama Lengkap</label>
                     <input type="text" id="name" placeholder="Nama Anda" required>
@@ -212,18 +253,18 @@
                     </select>
                 </div>
                 <div>
-                    <label>Layanan</label>
+                    <label>Jenis Treatment</label>
                     <select id="treatment" required>
-                        <option value="">-- Pilih --</option>
+                        <option value="">-- Pilih Layanan --</option>
                         <option>Fullbody Massage</option>
                         <option>Massage + Totok Wajah</option>
                         <option>Massage + Reflexology</option>
                     </select>
                 </div>
                 <div>
-                    <label>Durasi</label>
+                    <label>Durasi Pijat</label>
                     <select id="duration" required>
-                        <option value="">-- Pilih --</option>
+                        <option value="">-- Pilih Durasi --</option>
                         <option>60 Menit</option>
                         <option>90 Menit</option>
                         <option>120 Menit</option>
@@ -232,7 +273,7 @@
                 <div>
                     <label>Preferensi Terapis</label>
                     <select id="therapist" required>
-                        <option value="">-- Pilih --</option>
+                        <option value="">-- Pilih Terapis --</option>
                         <option>Laki-laki</option>
                         <option>Perempuan</option>
                     </select>
@@ -242,25 +283,28 @@
                     <input type="date" id="date" required>
                 </div>
                 <div class="full-width">
-                    <label>Alamat & Keluhan</label>
-                    <textarea id="notes" rows="3" placeholder="Alamat lengkap dan bagian tubuh yang ingin difokuskan"></textarea>
+                    <label>Alamat Lengkap & Keluhan</label>
+                    <textarea id="notes" rows="3" placeholder="Jl. Contoh No.123 / Keluhan punggung bawah"></textarea>
                 </div>
-                <button type="submit" class="submit-btn full-width">Confirm via WhatsApp</button>
+                <button type="submit" class="submit-btn full-width">KONFIRMASI VIA WHATSAPP</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>Follow our journey: <a href="https://www.instagram.com/kenshology" target="_blank" class="social-link">@kenshology</a></p>
-        <p style="font-size: 11px; opacity: 0.6; margin-top: 20px;">&copy; 2026 Kenshology Private Wellness. All Rights Reserved.</p>
+        <p>&copy; 2026 KENSHOLOGY - Private Therapeutic Wellness</p>
+        <a href="https://www.instagram.com/kenshology?igsh=eXVjeTlmZW9qNnNu" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i> @kenshology
+        </a>
     </footer>
 
     <script>
-        document.getElementById("finalBookingForm").addEventListener("submit", function(e){
+        document.getElementById("sageBookingForm").addEventListener("submit", function(e){
             e.preventDefault();
-            const message = `Halo Kenshology, saya ingin booking.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nCatatan: ${document.getElementById("notes").value}\n\n(Harga sudah termasuk transport)`;
+            const message = `Halo Kenshology, saya ingin reservasi session.\n\nNama: ${document.getElementById("name").value}\nGender: ${document.getElementById("custGender").value}\nLayanan: ${document.getElementById("treatment").value}\nDurasi: ${document.getElementById("duration").value}\nTerapis: ${document.getElementById("therapist").value}\nTanggal: ${document.getElementById("date").value}\nLokasi/Keluhan: ${document.getElementById("notes").value}\n\n(Harga All-in Transport)`;
             window.open(`https://wa.me/6285893122538?text=${encodeURIComponent(message)}`, "_blank");
         });
     </script>
+
 </body>
 </html>
